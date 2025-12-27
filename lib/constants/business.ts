@@ -21,7 +21,7 @@ export const CONTACT = {
 
 export const ADDRESS = {
   street: "Rua Silva Rabelo",
-  number: "40",
+  number: "43",
   neighborhood: "Méier",
   city: "Rio de Janeiro",
   state: "RJ",
@@ -31,16 +31,16 @@ export const ADDRESS = {
   countryCode: "BR",
   
   // Endereço formatado completo
-  full: "Rua Silva Rabelo, 40 - Méier, Rio de Janeiro - RJ",
+  full: "Rua Silva Rabelo, 43 - Méier, Rio de Janeiro - RJ",
   
   // Coordenadas (substituir pelas coordenadas reais do Google Maps)
   coordinates: {
-    latitude: -22.9039,
-    longitude: -43.2789,
+    latitude: -22.9000123,
+    longitude: -43.2813158,
   },
   
   // URL do Google Maps
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Silva+Rabelo+40+Méier+Rio+de+Janeiro",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Silva+Rabelo+43+Méier+Rio+de+Janeiro",
 } as const;
 
 export const HOURS = {
