@@ -99,7 +99,7 @@ export default function Footer() {
               &copy; {currentYear} {BUSINESS.name}. Todos os direitos reservados.
             </p>
             <p>
-              CREFITO: {BUSINESS.crefito} | CNPJ: {BUSINESS.cnpj}
+              CNPJ: {BUSINESS.cnpj}
             </p>
           </div>
         </div>
