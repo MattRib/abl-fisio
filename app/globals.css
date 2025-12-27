@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   CSS Variables - Paleta de Cores Premium
+   ========================================================================== */
+
+@theme {
+  --color-primary: #99cd85;
+  --color-secondary: #cfe0bc;
+  --color-accent: #7fa653;
+  --color-dark: #63783d;
+  --color-darker: #2f3b22;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   Base Styles - Design Premium Minimalista
+   ========================================================================== */
+
+@layer base {
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Melhor renderização de fontes */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Remove default margin/padding de headings */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Links sem sublinhado por padrão */
+  a {
+    text-decoration: none;
+  }
+
+  /* Focus visible para acessibilidade */
+  *:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* ==========================================================================
+   Custom Components - Reutilizáveis
+   ========================================================================== */
+
+@layer components {
+  /* Container responsivo customizado */
+  .container {
+    @apply mx-auto px-6 max-w-7xl;
+  }
+
+  /* Botão primário */
+  .btn-primary {
+    @apply bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+
+  /* Botão secundário */
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-dark font-semibold px-8 py-4 rounded-lg transition-all duration-300 border-2 border-primary;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300;
+  }
+
+  /* Seção com padding padrão */
+  .section {
+    @apply py-20;
+  }
+
+  /* Título de seção */
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-darker mb-4;
+  }
+
+  /* Subtítulo de seção */
+  .section-subtitle {
+    @apply text-lg text-dark;
+  }
+}
+
+/* ==========================================================================
+   Utilities - Helpers específicos
+   ========================================================================== */
+
+@layer utilities {
+  /* Gradiente de fundo padrão */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-secondary to-white;
+  }
+
+  .bg-gradient-accent {
+    @apply bg-gradient-to-br from-primary to-accent;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  /* Animação suave de entrada */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animações de flutuação para elementos decorativos */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 3s ease-in-out 1.5s infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Animação de rotação lenta para elementos decorativos */
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Animação suave de bounce para o indicador de scroll */
+  .animate-bounce-slow {
+    animation: bounce 1.6s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
