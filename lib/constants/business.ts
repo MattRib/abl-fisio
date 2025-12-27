@@ -70,6 +70,6 @@ export const SOCIAL = {
 } as const;
 
 export const SITE = {
-  url: "https://www.seudominioaqui.com.br", // Substituir pela URL real
-  domain: "seudominioaqui.com.br", // Substituir pelo domínio real
+  url: "https://www.ablfisioterapia.com.br", // Substituir pela URL real
+  domain: "ablfisioterapia.com.br", // Substituir pelo domínio real
 } as const;
