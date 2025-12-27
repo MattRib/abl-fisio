@@ -9,14 +9,13 @@ export const BUSINESS = {
   description: "Consultório de fisioterapia especializado no Méier, Rio de Janeiro. Atendimento em fisioterapia ortopédica, neurológica, respiratória, RPG e pilates clínico.",
   
   // Credenciais (substituir pelos valores reais)
-  crefito: "XXXXX-X/RJ",
-  cnpj: "XX.XXX.XXX/XXXX-XX",
+  cnpj: "63.337.048/0001-00",
 } as const;
 
 export const CONTACT = {
-  phone: "+5521999999999",
-  phoneFormatted: "(21) 99999-9999",
-  whatsapp: "5521999999999",
+  phone: "+5521999124720",
+  phoneFormatted: "(21) 99912-4720",
+  whatsapp: "5521999124720",
   email: "contato@exemplo.com.br", // Adicionar email real se houver
 } as const;
 
