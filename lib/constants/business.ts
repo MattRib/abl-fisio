@@ -4,7 +4,7 @@
  */
 
 export const BUSINESS = {
-  name: "Consultório de Fisioterapia Méier",
+  name: "ABL Fisioterapia",
   shortName: "ABL Fisioterapia",
   description: "Consultório de fisioterapia especializado no Méier, Rio de Janeiro. Atendimento em fisioterapia ortopédica, neurológica, respiratória, RPG e pilates clínico.",
   
