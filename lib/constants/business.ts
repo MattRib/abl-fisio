@@ -46,15 +46,15 @@ export const ADDRESS = {
 export const HOURS = {
   weekdays: {
     label: "Segunda a Sexta",
-    open: "08:00",
-    close: "19:00",
-    formatted: "8h às 19h",
+    open: "09:00",
+    close: "21:00",
+    formatted: "9h às 21h",
   },
   saturday: {
     label: "Sábado",
     open: "08:00",
-    close: "13:00",
-    formatted: "8h às 13h",
+    close: "14:00",
+    formatted: "8h às 14h",
   },
   sunday: {
     label: "Domingo",
