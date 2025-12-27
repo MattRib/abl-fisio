@@ -25,10 +25,10 @@ export default function FAQ() {
 
             {/* FAQ 1 */}
             <details className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center">
+              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
                 Quando devo procurar um fisioterapeuta?
                 <svg
-                  className="w-5 h-5 text-primary transition-transform group-open:rotate-180"
+                  className="w-5 h-5 text-primary transition-transform duration-500 ease-in-out group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -36,7 +36,7 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <div className="px-6 md:px-8 pb-6 md:pb-8 text-dark/80 leading-relaxed">
+              <div style={{ willChange: 'max-height, opacity, transform, padding' }} className="px-6 md:px-8 pb-0 md:pb-0 text-dark/80 leading-relaxed max-h-0 opacity-0 translate-y-4 overflow-hidden group-open:pb-6 group-open:md:pb-8 group-open:max-h-[520px] group-open:opacity-100 group-open:translate-y-0 transition-[max-height,opacity,transform,padding] duration-700 ease-in-out-expo">
                 <p>
                   Você deve procurar fisioterapia ao sentir dores persistentes, dificuldade de movimento,
                   após cirurgias ortopédicas ou quando perceber limitações nas atividades do dia a dia.
@@ -47,10 +47,10 @@ export default function FAQ() {
 
             {/* FAQ 2 */}
             <details className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center">
+              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
                 Quais tipos de dor a fisioterapia trata?
                 <svg
-                  className="w-5 h-5 text-primary transition-transform group-open:rotate-180"
+                  className="w-5 h-5 text-primary transition-transform duration-500 ease-in-out group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -58,7 +58,7 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <div className="px-6 md:px-8 pb-6 md:pb-8 text-dark/80 leading-relaxed">
+              <div style={{ willChange: 'max-height, opacity, transform, padding' }} className="px-6 md:px-8 pb-0 md:pb-0 text-dark/80 leading-relaxed max-h-0 opacity-0 translate-y-4 overflow-hidden group-open:pb-6 group-open:md:pb-8 group-open:max-h-[520px] group-open:opacity-100 group-open:translate-y-0 transition-[max-height,opacity,transform,padding] duration-700 ease-in-out-expo">
                 <p>
                   Tratamos dores na coluna, articulações, ombros, joelhos, lesões musculares e
                   tendinites. Também atendemos casos de dor crônica, pós-operatório e reabilitação
@@ -69,10 +69,10 @@ export default function FAQ() {
 
             {/* FAQ 3 */}
             <details className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center">
+              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
                 Onde fica o consultório no Méier?
                 <svg
-                  className="w-5 h-5 text-primary transition-transform group-open:rotate-180"
+                  className="w-5 h-5 text-primary transition-transform duration-500 ease-in-out group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -80,7 +80,7 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <div className="px-6 md:px-8 pb-6 md:pb-8 text-dark/80 leading-relaxed">
+              <div style={{ willChange: 'max-height, opacity, transform, padding' }} className="px-6 md:px-8 pb-0 md:pb-0 text-dark/80 leading-relaxed max-h-0 opacity-0 translate-y-4 overflow-hidden group-open:pb-6 group-open:md:pb-8 group-open:max-h-[520px] group-open:opacity-100 group-open:translate-y-0 transition-[max-height,opacity,transform,padding] duration-700 ease-in-out-expo">
                 <p>
                   Estamos localizados na {ADDRESS.street}, {ADDRESS.number}, no coração do {ADDRESS.neighborhood}.
                   Próximo ao metrô e com fácil acesso por diversas linhas de ônibus. A região conta com
@@ -91,10 +91,10 @@ export default function FAQ() {
 
             {/* FAQ 4 */}
             <details className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center">
+              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
                 Como funciona a primeira consulta?
                 <svg
-                  className="w-5 h-5 text-primary transition-transform group-open:rotate-180"
+                  className="w-5 h-5 text-primary transition-transform duration-500 ease-in-out group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -102,7 +102,7 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <div className="px-6 md:px-8 pb-6 md:pb-8 text-dark/80 leading-relaxed">
+              <div style={{ willChange: 'max-height, opacity, transform, padding' }} className="px-6 md:px-8 pb-0 md:pb-0 text-dark/80 leading-relaxed max-h-0 opacity-0 translate-y-4 overflow-hidden group-open:pb-6 group-open:md:pb-8 group-open:max-h-[520px] group-open:opacity-100 group-open:translate-y-0 transition-[max-height,opacity,transform,padding] duration-700 ease-in-out-expo">
                 <p>
                   Na primeira consulta, fazemos uma avaliação completa para entender seu histórico,
                   queixas e objetivos. Realizamos testes de movimento e elaboramos um plano de
@@ -113,10 +113,10 @@ export default function FAQ() {
 
             {/* FAQ 5 */}
             <details className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center">
+              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
                 Quantas sessões são necessárias?
                 <svg
-                  className="w-5 h-5 text-primary transition-transform group-open:rotate-180"
+                  className="w-5 h-5 text-primary transition-transform duration-500 ease-in-out group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <div className="px-6 md:px-8 pb-6 md:pb-8 text-dark/80 leading-relaxed">
+              <div style={{ willChange: 'max-height, opacity, transform, padding' }} className="px-6 md:px-8 pb-0 md:pb-0 text-dark/80 leading-relaxed max-h-0 opacity-0 translate-y-4 overflow-hidden group-open:pb-6 group-open:md:pb-8 group-open:max-h-[520px] group-open:opacity-100 group-open:translate-y-0 transition-[max-height,opacity,transform,padding] duration-700 ease-in-out-expo">
                 <p>
                   O número de sessões varia conforme cada caso. Alguns pacientes sentem melhora
                   já nas primeiras sessões, enquanto outros precisam de acompanhamento mais longo.
@@ -135,10 +135,10 @@ export default function FAQ() {
 
             {/* FAQ 6 */}
             <details className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
-              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center">
+              <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
                 Preciso de encaminhamento médico?
                 <svg
-                  className="w-5 h-5 text-primary transition-transform group-open:rotate-180"
+                  className="w-5 h-5 text-primary transition-transform duration-500 ease-in-out group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -146,7 +146,7 @@ export default function FAQ() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </summary>
-              <div className="px-6 md:px-8 pb-6 md:pb-8 text-dark/80 leading-relaxed">
+              <div style={{ willChange: 'max-height, opacity, transform, padding' }} className="px-6 md:px-8 pb-0 md:pb-0 text-dark/80 leading-relaxed max-h-0 opacity-0 translate-y-4 overflow-hidden group-open:pb-6 group-open:md:pb-8 group-open:max-h-[520px] group-open:opacity-100 group-open:translate-y-0 transition-[max-height,opacity,transform,padding] duration-700 ease-in-out-expo">
                 <p>
                   Não é obrigatório ter encaminhamento médico para iniciar a fisioterapia, pois
                   o fisioterapeuta tem autonomia profissional. Porém, caso tenha exames ou laudos
