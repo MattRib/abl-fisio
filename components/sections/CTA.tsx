@@ -1,10 +1,21 @@
+"use client";
+
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/utils";
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function CTA() {
   const whatsappUrl = getWhatsAppUrl(WHATSAPP_MESSAGES.evaluation);
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-primary to-accent relative overflow-hidden">
+    <section
+      ref={ref}
+      className={`py-16 md:py-20 bg-gradient-to-br from-primary to-accent relative overflow-hidden transition-all duration-700 ease-out ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
       {/* Decorative elements - Desktop only */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />

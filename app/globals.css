@@ -340,4 +340,29 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Background Patterns - Grid e Dots sutis */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(153, 205, 133, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-dot-pattern-dense {
+    background-image: radial-gradient(circle, rgba(153, 205, 133, 0.06) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(rgba(153, 205, 133, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(153, 205, 133, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-grid-pattern-dense {
+    background-image:
+      linear-gradient(rgba(153, 205, 133, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(153, 205, 133, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
 }

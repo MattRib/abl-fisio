@@ -1,10 +1,23 @@
+"use client";
+
 import { SERVICES } from "@/lib/constants";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { getWhatsAppUrl } from "@/lib/utils/whatsapp";
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function Services() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+
   return (
-    <section id="servicos" className="py-16 md:py-24 bg-gradient-to-b from-white to-secondary/10 relative overflow-hidden">
+    <section
+      ref={ref}
+      id="servicos"
+      className={`py-16 md:py-24 bg-gradient-to-b from-white to-secondary/10 bg-dot-pattern relative overflow-hidden transition-all duration-700 ease-out ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
       {/* Shape Decorativo Flutuante - Canto Superior Direito */}
       <div className="absolute top-12 right-0 md:right-12 w-64 h-64 md:w-96 md:h-96 pointer-events-none opacity-8 animate-float-slow">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

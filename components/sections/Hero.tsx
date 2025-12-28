@@ -5,8 +5,16 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/utils/whatsapp";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { triggerHaptic } from "@/lib/utils/haptic";
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function Hero() {
+  // Scroll reveal para elementos internos com delays escalonados
+  const titleReveal = useScrollReveal({ threshold: 0.1, delay: 100 });
+  const descriptionReveal = useScrollReveal({ threshold: 0.1, delay: 250 });
+  const buttonsReveal = useScrollReveal({ threshold: 0.1, delay: 400 });
+  const badgesReveal = useScrollReveal({ threshold: 0.1, delay: 550 });
+  const imageReveal = useScrollReveal({ threshold: 0.1, delay: 300 });
+
   return (
     <section className="relative bg-gradient-to-br from-secondary/30 to-white pt-28 pb-12 md:pt-32 md:pb-20 lg:h-screen lg:pt-0 lg:pb-0">
       <div className="container mx-auto px-6 h-full">
@@ -16,7 +24,14 @@ export default function Hero() {
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <div className="space-y-3 md:space-y-4">
               {/* Título - Versão condensada mobile */}
-              <h1 className="text-fluid-h1 font-bold text-darker leading-tight mt-4 md:mt-0">
+              <h1
+                ref={titleReveal.ref}
+                className={`text-fluid-h1 font-bold text-darker leading-tight mt-4 md:mt-0 transition-all duration-700 ease-out ${
+                  titleReveal.isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }`}
+              >
                 <span className="block md:inline">
                   Fisioterapia no {ADDRESS.neighborhood}
                 </span>
@@ -27,7 +42,14 @@ export default function Hero() {
               </h1>
 
               {/* Descrição - Condensada mobile */}
-              <p className="text-fluid-body text-dark/80 leading-relaxed max-w-xl">
+              <p
+                ref={descriptionReveal.ref}
+                className={`text-fluid-body text-dark/80 leading-relaxed max-w-xl transition-all duration-700 ease-out ${
+                  descriptionReveal.isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }`}
+              >
                 <span className="md:hidden">
                   Cuidado profissional focado na sua recuperação e bem-estar no Méier.
                 </span>
@@ -39,7 +61,14 @@ export default function Hero() {
             </div>
 
             {/* Botões CTA - Com ícones */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+            <div
+              ref={buttonsReveal.ref}
+              className={`flex flex-col sm:flex-row gap-3 md:gap-4 transition-all duration-700 ease-out ${
+                buttonsReveal.isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12"
+              }`}
+            >
               {/* Botão Agendar - Com ícone WhatsApp */}
               <a
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.schedule)}
@@ -83,7 +112,14 @@ export default function Hero() {
             </div>
 
             {/* Trust Badges - Mobile First */}
-            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
+            <div
+              ref={badgesReveal.ref}
+              className={`flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start transition-all duration-700 ease-out ${
+                badgesReveal.isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-12"
+              }`}
+            >
               {/* Badge 1 - Avaliações Google */}
               <div className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-white rounded-full shadow-soft border border-gray-100">
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 fill-current" viewBox="0 0 20 20">
@@ -107,7 +143,14 @@ export default function Hero() {
           </div>
 
           {/* Coluna Direita - Área Visual */}
-          <div className="relative hidden lg:block overflow-visible">
+          <div
+            ref={imageReveal.ref}
+            className={`relative hidden lg:block overflow-visible transition-all duration-1000 ease-out ${
+              imageReveal.isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-12"
+            }`}
+          >
             {/* Background decorativo com blur - camada -z-10 */}
             <div className="absolute inset-0 -z-10">
               <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />

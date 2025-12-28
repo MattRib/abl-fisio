@@ -4,9 +4,11 @@ import { ADDRESS } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils/whatsapp";
 import { useState } from "react";
 import { triggerHaptic } from "@/lib/utils/haptic";
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function FAQ() {
   const [searchQuery, setSearchQuery] = useState("");
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const faqs = [
     {
@@ -44,7 +46,15 @@ export default function FAQ() {
   });
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-white">
+    <section
+      ref={ref}
+      id="faq"
+      className={`py-16 md:py-24 bg-white bg-grid-pattern-dense transition-all duration-700 ease-out ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
 

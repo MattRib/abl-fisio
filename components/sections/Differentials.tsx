@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function Differentials() {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -8,6 +9,7 @@ export default function Differentials() {
   const [count2, setCount2] = useState(0); // Pacientes
   const [count3, setCount3] = useState(0); // Técnicas
   const sectionRef = useRef<HTMLElement>(null);
+  const { ref: revealRef, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,8 +69,24 @@ export default function Differentials() {
     requestAnimationFrame(updateCount);
   };
 
+  // Callback ref para combinar ambas as refs
+  const setRefs = (element: HTMLElement | null) => {
+    sectionRef.current = element;
+    if (revealRef && 'current' in revealRef) {
+      (revealRef as React.MutableRefObject<HTMLElement | null>).current = element;
+    }
+  };
+
   return (
-    <section ref={sectionRef} id="diferenciais" className="py-16 md:py-24 bg-gradient-to-br from-secondary/20 to-white">
+    <section
+      ref={setRefs}
+      id="diferenciais"
+      className={`py-16 md:py-24 bg-gradient-to-br from-secondary/20 to-white transition-all duration-700 ease-out ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 

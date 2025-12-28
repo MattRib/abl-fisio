@@ -1,6 +1,20 @@
+"use client";
+
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
+
 export default function About() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.15 });
+
   return (
-    <section id="sobre" className="py-16 md:py-24 bg-white">
+    <section
+      ref={ref}
+      id="sobre"
+      className={`py-16 md:py-24 bg-white bg-grid-pattern transition-all duration-700 ease-out ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
 

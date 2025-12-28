@@ -4,10 +4,12 @@ import TestimonialCard from "@/components/ui/TestimonialCard";
 import { getWhatsAppUrl } from "@/lib/utils/whatsapp";
 import { useState, useRef } from "react";
 import { triggerHaptic } from "@/lib/utils/haptic";
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   const testimonials = [
     {
@@ -37,7 +39,15 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="depoimentos" className="py-16 md:py-24 bg-white">
+    <section
+      ref={ref}
+      id="depoimentos"
+      className={`py-16 md:py-24 bg-white bg-dot-pattern-dense transition-all duration-700 ease-out ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 

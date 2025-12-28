@@ -7,6 +7,15 @@ import { useState, useEffect } from "react";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Animação inicial do header
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHasAnimated(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const navLinks = [
     { href: "#servicos", label: "Serviços" },
@@ -28,7 +37,13 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 transition-all duration-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 px-4 pt-4 transition-all duration-700 ease-out ${
+        hasAnimated
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-8"
+      }`}
+    >
       <div
         className={`
           container mx-auto transition-all duration-500 ease-out

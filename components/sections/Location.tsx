@@ -1,10 +1,23 @@
+"use client";
+
 import { ADDRESS, CONTACT, HOURS } from "@/lib/constants";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/utils/whatsapp";
 import Button from "@/components/ui/Button";
+import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function Location() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+
   return (
-    <section id="localizacao" className="py-16 md:py-24 bg-gradient-to-br from-secondary/10 to-white">
+    <section
+      ref={ref}
+      id="localizacao"
+      className={`py-16 md:py-24 bg-gradient-to-br from-secondary/10 to-white transition-all duration-700 ease-out ${
+        isVisible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-12"
+      }`}
+    >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 
