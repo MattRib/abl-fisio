@@ -13,27 +13,58 @@ export default function FAQ() {
   const faqs = [
     {
       question: "Quando devo procurar um fisioterapeuta?",
-      answer: "Você deve procurar fisioterapia ao sentir dores persistentes, dificuldade de movimento, após cirurgias ortopédicas ou quando perceber limitações nas atividades do dia a dia. A fisioterapia também é indicada para prevenir lesões e melhorar postura."
+      answer: "Você deve procurar fisioterapia ao sentir dores persistentes, dificuldade de movimento, após cirurgias ortopédicas ou quando perceber limitações nas atividades do dia a dia. A fisioterapia também é indicada para prevenir lesões e melhorar postura.",
+      icon: (
+        <svg className="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      )
     },
     {
       question: "Quais tipos de dor a fisioterapia trata?",
-      answer: "Tratamos dores na coluna, articulações, ombros, joelhos, lesões musculares e tendinites. Também atendemos casos de dor crônica, pós-operatório e reabilitação neurológica. Cada tratamento é personalizado conforme a necessidade do paciente."
+      answer: "Tratamos dores na coluna, articulações, ombros, joelhos, lesões musculares e tendinites. Também atendemos casos de dor crônica, pós-operatório e reabilitação neurológica. Cada tratamento é personalizado conforme a necessidade do paciente.",
+      icon: (
+        <svg className="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      )
     },
     {
       question: "Onde fica o consultório no Méier?",
-      answer: `Estamos localizados na ${ADDRESS.street}, ${ADDRESS.number}, no coração do ${ADDRESS.neighborhood}. Próximo ao metrô e com fácil acesso por diversas linhas de ônibus. A região conta com estacionamento disponível nas proximidades.`
+      answer: `Estamos localizados na ${ADDRESS.street}, ${ADDRESS.number}, no coração do ${ADDRESS.neighborhood}. Próximo ao metrô e com fácil acesso por diversas linhas de ônibus. A região conta com estacionamento disponível nas proximidades.`,
+      icon: (
+        <svg className="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      )
     },
     {
       question: "Como funciona a primeira consulta?",
-      answer: "Na primeira consulta, fazemos uma avaliação completa para entender seu histórico, queixas e objetivos. Realizamos testes de movimento e elaboramos um plano de tratamento personalizado. A sessão dura em média 50 minutos."
+      answer: "Na primeira consulta, fazemos uma avaliação completa para entender seu histórico, queixas e objetivos. Realizamos testes de movimento e elaboramos um plano de tratamento personalizado. A sessão dura em média 50 minutos.",
+      icon: (
+        <svg className="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+      )
     },
     {
       question: "Quantas sessões são necessárias?",
-      answer: "O número de sessões varia conforme cada caso. Alguns pacientes sentem melhora já nas primeiras sessões, enquanto outros precisam de acompanhamento mais longo. Reavaliamos constantemente a evolução para ajustar o tratamento."
+      answer: "O número de sessões varia conforme cada caso. Alguns pacientes sentem melhora já nas primeiras sessões, enquanto outros precisam de acompanhamento mais longo. Reavaliamos constantemente a evolução para ajustar o tratamento.",
+      icon: (
+        <svg className="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      )
     },
     {
       question: "Preciso de encaminhamento médico?",
-      answer: "Não é obrigatório ter encaminhamento médico para iniciar a fisioterapia, pois o fisioterapeuta tem autonomia profissional. Porém, caso tenha exames ou laudos médicos, traga-os na primeira consulta para auxiliar na avaliação."
+      answer: "Não é obrigatório ter encaminhamento médico para iniciar a fisioterapia, pois o fisioterapeuta tem autonomia profissional. Porém, caso tenha exames ou laudos médicos, traga-os na primeira consulta para auxiliar na avaliação.",
+      icon: (
+        <svg className="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      )
     }
   ];
 
@@ -119,7 +150,10 @@ export default function FAQ() {
               {filteredFaqs.map((faq, index) => (
                 <details key={index} className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
                   <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
-                    {faq.question}
+                    <div className="flex items-center gap-3 md:gap-4">
+                      {faq.icon}
+                      <span>{faq.question}</span>
+                    </div>
                     <svg
                       className="w-5 h-5 text-primary transition-transform duration-500 ease-in-out group-open:rotate-180 flex-shrink-0 ml-4"
                       fill="none"
