@@ -17,7 +17,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <article
-      className={`group relative w-full max-w-xs h-56 md:h-64 mx-auto rounded-lg overflow-hidden cursor-pointer ${className}`}
+      className={`group relative w-full max-w-xs h-56 md:h-64 mx-auto rounded-lg overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${className}`}
     >
       {/* Imagem de fundo */}
       <Image

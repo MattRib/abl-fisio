@@ -16,7 +16,7 @@ export default function TestimonialCard({
 
   return (
     <article
-      className={`relative bg-gradient-to-br from-white to-secondary/5 p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 flex flex-col h-full overflow-hidden ${className}`}
+      className={`relative bg-gradient-to-br from-white to-secondary/5 p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100/50 flex flex-col h-full overflow-hidden ${className}`}
     >
       {/* Aspas decorativas gigantes no background */}
       <div className="absolute top-4 right-4 md:top-6 md:right-6 pointer-events-none" aria-hidden="true">

@@ -117,7 +117,7 @@ export default function FAQ() {
           {filteredFaqs.length > 0 ? (
             <div className="space-y-4">
               {filteredFaqs.map((faq, index) => (
-                <details key={index} className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 transition-colors">
+                <details key={index} className="group bg-gradient-to-br from-white to-secondary/5 border border-gray-100 rounded-xl overflow-hidden hover:border-primary/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-500">
                   <summary className="cursor-pointer p-6 md:p-8 font-semibold text-darker text-lg flex justify-between items-center transition-colors duration-300 ease-in-out group-open:text-primary">
                     {faq.question}
                     <svg

@@ -1,5 +1,6 @@
 "use client";
 
+import type { RefObject } from "react";
 import { ADDRESS, CONTACT } from "@/lib/constants";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/utils/whatsapp";
 import Button from "@/components/ui/Button";
@@ -25,7 +26,7 @@ export default function Hero() {
             <div className="space-y-3 md:space-y-4">
               {/* Título - Versão condensada mobile */}
               <h1
-                ref={titleReveal.ref}
+                ref={titleReveal.ref as RefObject<HTMLHeadingElement>}
                 className={`text-fluid-h1 font-bold text-darker leading-tight mt-4 md:mt-0 transition-all duration-700 ease-out ${
                   titleReveal.isVisible
                     ? "opacity-100 translate-y-0"
@@ -43,7 +44,7 @@ export default function Hero() {
 
               {/* Descrição - Condensada mobile */}
               <p
-                ref={descriptionReveal.ref}
+                ref={descriptionReveal.ref as RefObject<HTMLParagraphElement>}
                 className={`text-fluid-body text-dark/80 leading-relaxed max-w-xl transition-all duration-700 ease-out ${
                   descriptionReveal.isVisible
                     ? "opacity-100 translate-y-0"
@@ -62,7 +63,7 @@ export default function Hero() {
 
             {/* Botões CTA - Com ícones */}
             <div
-              ref={buttonsReveal.ref}
+              ref={buttonsReveal.ref as RefObject<HTMLDivElement>}
               className={`flex flex-col sm:flex-row gap-3 md:gap-4 transition-all duration-700 ease-out ${
                 buttonsReveal.isVisible
                   ? "opacity-100 translate-y-0"
@@ -113,7 +114,7 @@ export default function Hero() {
 
             {/* Trust Badges - Mobile First */}
             <div
-              ref={badgesReveal.ref}
+              ref={badgesReveal.ref as RefObject<HTMLDivElement>}
               className={`flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start transition-all duration-700 ease-out ${
                 badgesReveal.isVisible
                   ? "opacity-100 translate-y-0"
@@ -144,7 +145,7 @@ export default function Hero() {
 
           {/* Coluna Direita - Área Visual */}
           <div
-            ref={imageReveal.ref}
+            ref={imageReveal.ref as RefObject<HTMLDivElement>}
             className={`relative hidden lg:block overflow-visible transition-all duration-1000 ease-out ${
               imageReveal.isVisible
                 ? "opacity-100 translate-x-0"

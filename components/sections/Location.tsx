@@ -296,7 +296,6 @@ export default function Location() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title={`Mapa de localização - ${ADDRESS.full}`}
-                    importance="low"
                   />
                 </div>
 
