@@ -168,7 +168,7 @@ export default function Location() {
 
               {/* Endereço */}
               <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-                <div className="flex items-start space-x-4">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left space-y-4 lg:space-y-0 lg:space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-primary"
@@ -226,7 +226,7 @@ export default function Location() {
 
               {/* Horários */}
               <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-                <div className="flex items-start space-x-4">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left space-y-4 lg:space-y-0 lg:space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-accent"
@@ -242,11 +242,11 @@ export default function Location() {
                       />
                     </svg>
                   </div>
-                  <div className="flex-grow">
+                  <div className="flex-grow w-full">
                     <h3 className="font-semibold text-darker mb-3">
                       Horário de Atendimento
                     </h3>
-                    <div className="space-y-2 text-dark/80">
+                    <div className="space-y-2 text-dark/80 max-w-xs mx-auto lg:max-w-none lg:mx-0">
                       <div className="flex justify-between">
                         <span>{HOURS.weekdays.label}:</span>
                         <span className="font-medium">{HOURS.weekdays.formatted}</span>
@@ -266,7 +266,7 @@ export default function Location() {
 
               {/* Transporte Público - Visível apenas no mobile */}
               <div className="lg:hidden bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-                <div className="flex items-start space-x-4">
+                <div className="flex flex-col items-center text-center space-y-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-accent"
@@ -286,10 +286,10 @@ export default function Location() {
                     <h3 className="font-semibold text-darker mb-3">
                       Acesso por Transporte Público
                     </h3>
-                    <div className="space-y-4 text-dark/80">
+                    <div className="space-y-4 text-dark/80 max-w-xs mx-auto">
                       {/* Estação de Trem */}
-                      <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex flex-col items-center gap-2">
+                        <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         <div>
@@ -299,8 +299,8 @@ export default function Location() {
                       </div>
 
                       {/* Ônibus */}
-                      <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex flex-col items-center gap-2">
+                        <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
                         </svg>
                         <div>
@@ -310,8 +310,8 @@ export default function Location() {
                       </div>
 
                       {/* Estacionamento */}
-                      <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex flex-col items-center gap-2">
+                        <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                         </svg>
                         <div>
