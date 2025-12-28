@@ -36,7 +36,7 @@ export default function Location() {
               do Rio de Janeiro.
             </p>
             <p className="text-sm md:text-base text-dark/60 max-w-2xl mx-auto mb-8">
-              Próximo ao metrô e com diversas opções de transporte público,
+              Próxima à estação de trem do Méier e com diversas opções de transporte público,
               estamos prontos para receber você com conforto e praticidade.
             </p>
 
@@ -187,13 +187,13 @@ export default function Location() {
                       Acesso por Transporte Público
                     </h3>
                     <div className="space-y-4 text-dark/80">
-                      {/* Metrô */}
+                      {/* Estação de Trem */}
                       <div className="flex items-start gap-3">
                         <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         <div>
-                          <p className="font-medium text-darker">Metrô Méier</p>
+                          <p className="font-medium text-darker">Estação de Trem do Méier</p>
                           <p className="text-sm text-dark/70">5 minutos a pé</p>
                         </div>
                       </div>
@@ -326,14 +326,14 @@ export default function Location() {
                       Acesso por Transporte Público
                     </h3>
                     <div className="space-y-4 text-dark/80">
-                      {/* Metrô */}
+                      {/* Estação de Trem */}
                       <div className="flex items-start gap-3">
                         <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         <div>
-                          <p className="font-medium text-darker">Metrô Méier</p>
-                          <p className="text-sm text-dark/70">5 minutos a pé</p>
+                          <p className="font-medium text-darker">Estação de Trem do Méier</p>
+                          <p className="text-sm text-dark/70">4 minutos a pé</p>
                         </div>
                       </div>
 
