@@ -326,7 +326,7 @@ export default function Location() {
 
               {/* Contato */}
               <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
-                <div className="flex items-start space-x-4">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left space-y-4 lg:space-y-0 lg:space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-primary"
@@ -342,7 +342,7 @@ export default function Location() {
                       />
                     </svg>
                   </div>
-                  <div className="flex-grow">
+                  <div className="flex-grow w-full">
                     <h3 className="font-semibold text-darker mb-3">
                       Entre em Contato
                     </h3>
