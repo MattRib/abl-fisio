@@ -55,8 +55,7 @@ export default function Hero() {
                   Cuidado profissional focado na sua recuperação e bem-estar no Méier.
                 </span>
                 <span className="hidden md:inline">
-                  Tratamentos humanizados no coração do {ADDRESS.neighborhood}, {ADDRESS.city}.
-                  Cuidado profissional focado na sua recuperação e bem-estar.
+                  Na ABL Fisioterapia, cada paciente é acompanhado de perto, com um plano de tratamento que respeita seu tempo, seu corpo e seus objetivos.
                 </span>
               </p>
             </div>
