@@ -166,12 +166,31 @@
     animation: float 3s ease-in-out 1.5s infinite;
   }
 
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
   @keyframes float {
     0%, 100% {
       transform: translateY(0px);
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    25% {
+      transform: translateY(-8px) translateX(3px);
+    }
+    50% {
+      transform: translateY(-15px) translateX(0px);
+    }
+    75% {
+      transform: translateY(-8px) translateX(-3px);
     }
   }
 

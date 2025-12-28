@@ -4,8 +4,40 @@ import { getWhatsAppUrl } from "@/lib/utils/whatsapp";
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-16 md:py-24 bg-gradient-to-b from-white to-secondary/10">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="servicos" className="py-16 md:py-24 bg-gradient-to-b from-white to-secondary/10 relative overflow-hidden">
+      {/* Shape Decorativo Flutuante - Canto Superior Direito */}
+      <div className="absolute top-12 right-0 md:right-12 w-64 h-64 md:w-96 md:h-96 pointer-events-none opacity-8 animate-float-slow">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="serviceGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 0.6 }} />
+              <stop offset="50%" style={{ stopColor: '#7FA653', stopOpacity: 0.4 }} />
+              <stop offset="100%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.3 }} />
+            </linearGradient>
+          </defs>
+          <path fill="url(#serviceGradient1)" d="M47.3,-79.3C61.1,-72.8,72.3,-60.5,79.8,-46.3C87.3,-32.1,91.1,-16,91.6,0.4C92.1,16.8,89.3,33.6,81.3,47.8C73.3,62,60.1,73.6,45.2,80.8C30.3,88,13.7,90.8,-2.4,95.1C-18.5,99.4,-37,105.2,-52.3,99.2C-67.6,93.2,-79.7,75.4,-87.3,56.2C-94.9,37,-98,16.4,-96.5,-3.7C-95,-23.8,-88.9,-43.4,-78.5,-59.8C-68.1,-76.2,-53.4,-89.4,-37.6,-94.8C-21.8,-100.2,-4.8,-97.8,10.4,-92.3C25.6,-86.8,33.5,-85.8,47.3,-79.3Z" transform="translate(100 100)" />
+        </svg>
+      </div>
+
+      {/* Linhas Onduladas de Flow - Background decorativo */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Linha Ondulada Superior */}
+        <svg className="absolute top-1/4 left-0 w-full h-32 opacity-5" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,60 Q300,10 600,60 T1200,60" fill="none" stroke="#99CD85" strokeWidth="3" />
+          <path d="M0,80 Q300,30 600,80 T1200,80" fill="none" stroke="#7FA653" strokeWidth="2" opacity="0.5" />
+        </svg>
+
+        {/* Linha Ondulada Inferior */}
+        <svg className="absolute bottom-1/4 left-0 w-full h-32 opacity-5" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,40 Q300,90 600,40 T1200,40" fill="none" stroke="#CFE0BC" strokeWidth="3" />
+          <path d="M0,60 Q300,110 600,60 T1200,60" fill="none" stroke="#99CD85" strokeWidth="2" opacity="0.5" />
+        </svg>
+
+        {/* Círculo Blur Decorativo - Esquerda */}
+        <div className="absolute top-1/2 -left-32 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         {/* Header centralizado */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-fluid-h2 font-bold text-darker mb-4">
