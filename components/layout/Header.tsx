@@ -128,7 +128,7 @@ export default function Header() {
           `}
           aria-label="Navegação mobile"
         >
-          <ul className="space-y-4">
+          <ul className="space-y-4 text-center">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
