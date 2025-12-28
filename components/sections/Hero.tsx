@@ -17,8 +17,44 @@ export default function Hero() {
   const imageReveal = useScrollReveal({ threshold: 0.1, delay: 300 });
 
   return (
-    <section className="relative bg-gradient-to-br from-secondary/30 to-white pt-28 pb-12 md:pt-32 md:pb-20 lg:h-screen lg:pt-0 lg:pb-0">
-      <div className="container mx-auto px-6 h-full">
+    <section className="relative bg-gradient-to-br from-secondary/30 to-white pt-28 pb-12 md:pt-32 md:pb-20 lg:h-screen lg:pt-0 lg:pb-0 overflow-hidden">
+      {/* Pattern/Textura Premium - Grid minimalista */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              {/* Linhas verticais */}
+              <line x1="0" y1="0" x2="0" y2="40" stroke="#63783D" strokeWidth="0.5" />
+              {/* Linhas horizontais */}
+              <line x1="0" y1="0" x2="40" y2="0" stroke="#63783D" strokeWidth="0.5" />
+            </pattern>
+            <pattern id="diagonal-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+              {/* Linhas diagonais sutis */}
+              <line x1="0" y1="0" x2="60" y2="60" stroke="#7FA653" strokeWidth="0.5" opacity="0.5" />
+              <line x1="0" y1="60" x2="60" y2="0" stroke="#99CD85" strokeWidth="0.3" opacity="0.3" />
+            </pattern>
+          </defs>
+          {/* Grid de fundo */}
+          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+          {/* Diagonais sobrepostas */}
+          <rect width="100%" height="100%" fill="url(#diagonal-pattern)" opacity="0.6" />
+        </svg>
+      </div>
+
+      {/* Textura de pontos decorativos */}
+      <div className="absolute inset-0 opacity-[0.015] pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dots-pattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1" fill="#99CD85" />
+              <circle cx="17" cy="17" r="0.8" fill="#7FA653" opacity="0.6" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots-pattern)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 h-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
 
           {/* Coluna Esquerda - Conteúdo */}
