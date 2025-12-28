@@ -81,13 +81,129 @@ export default function Differentials() {
     <section
       ref={setRefs}
       id="diferenciais"
-      className={`py-16 md:py-24 bg-gradient-to-br from-secondary/20 to-white transition-all duration-700 ease-out ${
+      className={`py-16 md:py-24 bg-gradient-to-br from-secondary/20 to-white relative overflow-hidden transition-all duration-700 ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-8">
+      {/* Hexágonos vazados grandes - Canto superior direito (Estrutura) */}
+      <div className="absolute -top-20 -right-20 w-[400px] h-[400px] opacity-[0.04] pointer-events-none animate-spin-slow">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          {/* Hexágono externo */}
+          <polygon
+            points="100,5 180,52.5 180,147.5 100,195 20,147.5 20,52.5"
+            fill="none"
+            stroke="#7FA653"
+            strokeWidth="1.5"
+            opacity="0.8"
+          />
+          {/* Hexágono médio */}
+          <polygon
+            points="100,30 160,65 160,135 100,170 40,135 40,65"
+            fill="none"
+            stroke="#99CD85"
+            strokeWidth="1.2"
+            opacity="0.6"
+          />
+          {/* Hexágono interno */}
+          <polygon
+            points="100,55 130,72.5 130,127.5 100,145 70,127.5 70,72.5"
+            fill="none"
+            stroke="#CFE0BC"
+            strokeWidth="1"
+            opacity="0.4"
+          />
+          {/* Linhas conectivas radiais */}
+          <line x1="100" y1="5" x2="100" y2="55" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+          <line x1="180" y1="52.5" x2="130" y2="72.5" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+          <line x1="180" y1="147.5" x2="130" y2="127.5" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+          <line x1="100" y1="195" x2="100" y2="145" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+          <line x1="20" y1="147.5" x2="70" y2="127.5" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+          <line x1="20" y1="52.5" x2="70" y2="72.5" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+        </svg>
+      </div>
+
+      {/* Espiral geométrica minimalista - Canto inferior esquerdo */}
+      <div className="absolute -bottom-16 -left-16 w-64 h-64 opacity-[0.03] pointer-events-none">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <defs>
+            <linearGradient id="spiralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 1 }} />
+              <stop offset="50%" style={{ stopColor: '#7FA653', stopOpacity: 0.8 }} />
+              <stop offset="100%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.6 }} />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 100,100
+               Q 120,100 120,80
+               Q 120,60 100,60
+               Q 80,60 80,80
+               Q 80,100 100,100
+               Q 120,100 130,80
+               Q 140,60 130,40
+               Q 120,20 100,20
+               Q 80,20 60,40
+               Q 40,60 40,80
+               Q 40,100 60,120
+               Q 80,140 100,140"
+            fill="none"
+            stroke="url(#spiralGradient)"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
+      {/* Anéis concêntricos - Fundo centro (Crescimento progressivo) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.02] pointer-events-none">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          {/* Anel 1 - Mais externo */}
+          <circle cx="100" cy="100" r="95" fill="none" stroke="#99CD85" strokeWidth="0.5" opacity="0.3" />
+          {/* Anel 2 */}
+          <circle cx="100" cy="100" r="75" fill="none" stroke="#7FA653" strokeWidth="0.8" opacity="0.5" />
+          {/* Anel 3 */}
+          <circle cx="100" cy="100" r="55" fill="none" stroke="#99CD85" strokeWidth="1" opacity="0.7" />
+          {/* Anel 4 */}
+          <circle cx="100" cy="100" r="35" fill="none" stroke="#CFE0BC" strokeWidth="1.2" opacity="0.8" />
+          {/* Anel 5 - Mais interno */}
+          <circle cx="100" cy="100" r="15" fill="none" stroke="#7FA653" strokeWidth="1.5" opacity="1" />
+          {/* Linhas radiais conectando os anéis */}
+          <line x1="100" y1="5" x2="100" y2="195" stroke="#63783D" strokeWidth="0.3" opacity="0.2" />
+          <line x1="5" y1="100" x2="195" y2="100" stroke="#63783D" strokeWidth="0.3" opacity="0.2" />
+        </svg>
+      </div>
+
+      {/* Linhas conectivas entre cards - Grid de conexão */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.02] hidden lg:block">
+        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          {/* Linhas horizontais conectando cards */}
+          <line x1="200" y1="400" x2="1000" y2="400" stroke="#7FA653" strokeWidth="1" strokeDasharray="6 4" />
+          {/* Linhas verticais */}
+          <line x1="300" y1="300" x2="300" y2="500" stroke="#99CD85" strokeWidth="0.8" strokeDasharray="6 4" />
+          <line x1="600" y1="300" x2="600" y2="500" stroke="#99CD85" strokeWidth="0.8" strokeDasharray="6 4" />
+          <line x1="900" y1="300" x2="900" y2="500" stroke="#99CD85" strokeWidth="0.8" strokeDasharray="6 4" />
+          {/* Nós de conexão */}
+          <circle cx="300" cy="400" r="4" fill="#7FA653" opacity="0.5" />
+          <circle cx="600" cy="400" r="4" fill="#99CD85" opacity="0.5" />
+          <circle cx="900" cy="400" r="4" fill="#7FA653" opacity="0.5" />
+        </svg>
+      </div>
+
+      {/* Elementos geométricos decorativos adicionais */}
+      <div className="absolute top-1/4 left-1/4 w-12 h-12 opacity-[0.03] pointer-events-none rotate-45">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="80" height="80" fill="none" stroke="#7FA653" strokeWidth="2" />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-1/4 right-1/4 w-16 h-16 opacity-[0.03] pointer-events-none">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,90 10,90" fill="none" stroke="#99CD85" strokeWidth="2" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
 
           {/* Header centralizado */}
