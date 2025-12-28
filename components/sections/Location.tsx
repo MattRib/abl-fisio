@@ -19,7 +19,7 @@ export default function Location() {
       }`}
     >
       {/* Pin de localização gigante - Fundo direito */}
-      <div className="absolute top-1/2 -translate-y-1/2 right-12 w-80 h-80 md:w-[500px] md:h-[500px] opacity-[0.04] pointer-events-none">
+      <div className="absolute top-1/2 -translate-y-1/2 right-12 w-80 h-80 md:w-[500px] md:h-[500px] opacity-[0.11] pointer-events-none">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
           <defs>
             <linearGradient id="pinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -56,7 +56,7 @@ export default function Location() {
       </div>
 
       {/* Ícone de trem minimalista - Canto superior esquerdo */}
-      <div className="absolute top-20 left-12 w-32 h-32 md:w-40 md:h-40 opacity-[0.03] pointer-events-none">
+      <div className="absolute top-20 left-12 w-32 h-32 md:w-40 md:h-40 opacity-[0.07] pointer-events-none">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
           <defs>
             <linearGradient id="trainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -289,8 +289,8 @@ export default function Location() {
                     <div className="space-y-4 text-dark/80 max-w-xs mx-auto">
                       {/* Estação de Trem */}
                       <div className="flex flex-col items-center gap-2">
-                        <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <svg className="w-8 h-8 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2C8 2 4 2.5 4 6v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm0 2c3.51 0 5.63.97 6 2H6c.37-1.03 2.49-2 6-2zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V7h5v3zm2 0V7h5v3h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
                         </svg>
                         <div>
                           <p className="font-medium text-darker">Estação de Trem do Méier</p>
@@ -300,8 +300,8 @@ export default function Location() {
 
                       {/* Ônibus */}
                       <div className="flex flex-col items-center gap-2">
-                        <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        <svg className="w-8 h-8 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l1.5-1.5h5L16 21h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm5.66 2.99H6.34C6.89 4.46 8.31 4 12 4s5.11.46 5.66.99zm.34 2V10H6V6.99h12zm-.34 9.74l-.29.27H6.63l-.29-.27C6.12 16.62 6 16.37 6 16v-4h12v4c0 .37-.12.62-.34.73zM8.5 14c-.83 0-1.5.67-1.5 1.5S7.67 17 8.5 17s1.5-.67 1.5-1.5S9.33 14 8.5 14zm7 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
                         </svg>
                         <div>
                           <p className="font-medium text-darker">Linhas de Ônibus</p>
@@ -311,8 +311,8 @@ export default function Location() {
 
                       {/* Estacionamento */}
                       <div className="flex flex-col items-center gap-2">
-                        <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        <svg className="w-8 h-8 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M13 3H6v18h4v-6h3c3.31 0 6-2.69 6-6s-2.69-6-6-6zm.2 8H10V7h3.2c1.1 0 2 .9 2 2s-.9 2-2 2z"/>
                         </svg>
                         <div>
                           <p className="font-medium text-darker">Estacionamento</p>
@@ -384,11 +384,10 @@ export default function Location() {
               <div className="relative">
                 <div className="relative w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                   {/*
-                    Google Maps Embed
-                    Substitua o src abaixo pela URL real do Google Maps Embed
+                    Google Maps Embed - Rua Silva Rabelo, 43 - Méier
                   */}
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2345678901234!2d-43.2789!3d-22.9039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU0JzE0LjAiUyA0M8KwMTYnNDQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.249799!2d-43.283!3d-22.900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU0JzAwLjAiUyA0M8KwMTYnNTguNyJX!5e0!3m2!1spt-BR!2sbr!4v1735422000000!5m2!1spt-BR!2sbr&q=Rua+Silva+Rabelo,+43+-+M%C3%A9ier,+Rio+de+Janeiro+-+RJ"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -428,8 +427,8 @@ export default function Location() {
                     <div className="space-y-4 text-dark/80">
                       {/* Estação de Trem */}
                       <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        <svg className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2C8 2 4 2.5 4 6v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm0 2c3.51 0 5.63.97 6 2H6c.37-1.03 2.49-2 6-2zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V7h5v3zm2 0V7h5v3h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
                         </svg>
                         <div>
                           <p className="font-medium text-darker">Estação de Trem do Méier</p>
@@ -439,8 +438,8 @@ export default function Location() {
 
                       {/* Ônibus */}
                       <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        <svg className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l1.5-1.5h5L16 21h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm5.66 2.99H6.34C6.89 4.46 8.31 4 12 4s5.11.46 5.66.99zm.34 2V10H6V6.99h12zm-.34 9.74l-.29.27H6.63l-.29-.27C6.12 16.62 6 16.37 6 16v-4h12v4c0 .37-.12.62-.34.73zM8.5 14c-.83 0-1.5.67-1.5 1.5S7.67 17 8.5 17s1.5-.67 1.5-1.5S9.33 14 8.5 14zm7 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
                         </svg>
                         <div>
                           <p className="font-medium text-darker">Linhas de Ônibus</p>
@@ -450,8 +449,8 @@ export default function Location() {
 
                       {/* Estacionamento */}
                       <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        <svg className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M13 3H6v18h4v-6h3c3.31 0 6-2.69 6-6s-2.69-6-6-6zm.2 8H10V7h3.2c1.1 0 2 .9 2 2s-.9 2-2 2z"/>
                         </svg>
                         <div>
                           <p className="font-medium text-darker">Estacionamento</p>
