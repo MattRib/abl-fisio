@@ -4,9 +4,26 @@ import { SERVICES } from "@/lib/constants";
 import ServiceCard from "@/components/ui/ServiceCard";
 import { getWhatsAppUrl } from "@/lib/utils/whatsapp";
 import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
+import { useEffect, useState } from "react";
 
 export default function Services() {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+  const [isMobile, setIsMobile] = useState(false);
+  const { ref, isVisible } = useScrollReveal({
+    threshold: 0.1,
+    initialVisible: isMobile,
+    delay: isMobile ? 800 : 0
+  });
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <section

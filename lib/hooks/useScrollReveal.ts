@@ -6,6 +6,7 @@ interface UseScrollRevealOptions {
   threshold?: number;
   delay?: number;
   once?: boolean;
+  initialVisible?: boolean;
 }
 
 /**
@@ -16,11 +17,20 @@ export function useScrollReveal({
   threshold = 0.1,
   delay = 0,
   once = true,
+  initialVisible = false,
 }: UseScrollRevealOptions = {}) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Se initialVisible for true, anima imediatamente após montar
+    if (initialVisible) {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, delay || 100); // pequeno delay para garantir a animação
+      return () => clearTimeout(timer);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -60,7 +70,7 @@ export function useScrollReveal({
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold, delay, once]);
+  }, [threshold, delay, once, initialVisible]);
 
   return { ref, isVisible };
 }
