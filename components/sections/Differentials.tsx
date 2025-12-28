@@ -1,6 +1,74 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
 export default function Differentials() {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [count1, setCount1] = useState(0); // Anos
+  const [count2, setCount2] = useState(0); // Pacientes
+  const [count3, setCount3] = useState(0); // Técnicas
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+
+            // Animação para "5+"
+            animateCount(0, 5, 1500, setCount1);
+
+            // Animação para "1000+"
+            animateCount(0, 1000, 2000, setCount2);
+
+            // Animação para "6"
+            animateCount(0, 6, 1200, setCount3);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const animateCount = (
+    start: number,
+    end: number,
+    duration: number,
+    setter: (value: number) => void
+  ) => {
+    const startTime = Date.now();
+    const endTime = startTime + duration;
+
+    const updateCount = () => {
+      const now = Date.now();
+      const remaining = endTime - now;
+
+      if (remaining <= 0) {
+        setter(end);
+      } else {
+        const progress = (duration - remaining) / duration;
+        const current = Math.floor(start + (end - start) * progress);
+        setter(current);
+        requestAnimationFrame(updateCount);
+      }
+    };
+
+    requestAnimationFrame(updateCount);
+  };
+
   return (
-    <section id="diferenciais" className="py-16 md:py-24 bg-gradient-to-br from-secondary/20 to-white">
+    <section ref={sectionRef} id="diferenciais" className="py-16 md:py-24 bg-gradient-to-br from-secondary/20 to-white">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 
@@ -38,8 +106,8 @@ export default function Differentials() {
                   />
                 </svg>
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-darker mb-2">
-                5+
+              <div className="text-4xl md:text-5xl font-bold text-darker mb-2 tabular-nums">
+                {count1}+
               </div>
               <h3 className="text-sm font-semibold text-dark uppercase tracking-wide">
                 Anos de Experiência
@@ -63,8 +131,8 @@ export default function Differentials() {
                   />
                 </svg>
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-darker mb-2">
-                1000+
+              <div className="text-4xl md:text-5xl font-bold text-darker mb-2 tabular-nums">
+                {count2.toLocaleString('pt-BR')}+
               </div>
               <h3 className="text-sm font-semibold text-dark uppercase tracking-wide">
                 Pacientes Atendidos
@@ -88,8 +156,8 @@ export default function Differentials() {
                   />
                 </svg>
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-darker mb-2">
-                6
+              <div className="text-4xl md:text-5xl font-bold text-darker mb-2 tabular-nums">
+                {count3}
               </div>
               <h3 className="text-sm font-semibold text-dark uppercase tracking-wide">
                 Técnicas Especializadas
