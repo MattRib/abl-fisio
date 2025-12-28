@@ -9,13 +9,86 @@ export default function About() {
     <section
       ref={ref}
       id="sobre"
-      className={`py-16 md:py-24 bg-white bg-grid-pattern transition-all duration-700 ease-out ${
+      className={`py-16 md:py-24 bg-white bg-dot-pattern relative overflow-hidden transition-all duration-700 ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-8">
+      {/* Shape orgânico grande - Canto superior esquerdo (Humanidade) */}
+      <div className="absolute -top-24 -left-24 w-[500px] h-[500px] opacity-[0.11] pointer-events-none animate-float-slow">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <defs>
+            <linearGradient id="aboutBlobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 1 }} />
+              <stop offset="50%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.8 }} />
+              <stop offset="100%" style={{ stopColor: '#7FA653', stopOpacity: 0.6 }} />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#aboutBlobGradient)"
+            d="M51.3,-83.8C65.5,-75.2,75.8,-60.3,82.9,-44.2C90,-28.1,93.9,-10.8,93.4,6.8C92.9,24.4,88,42.3,77.8,56.4C67.6,70.5,52.1,80.8,35.4,86.5C18.7,92.2,0.8,93.3,-16.8,90.1C-34.4,86.9,-51.7,79.4,-65.9,67.4C-80.1,55.4,-91.2,38.9,-95.3,20.8C-99.4,2.7,-96.5,-17,-87.9,-33.1C-79.3,-49.2,-65,-61.7,-49.2,-69.8C-33.4,-77.9,-16.7,-81.6,0.5,-82.4C17.7,-83.2,37.1,-92.4,51.3,-83.8Z"
+            transform="translate(100 100)"
+          />
+        </svg>
+      </div>
+
+      {/* Hexágonos geométricos vazados - Canto inferior direito (Ciência) */}
+      <div className="absolute bottom-12 right-12 w-64 h-64 opacity-[0.06] pointer-events-none animate-spin-slow">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          {/* Hexágono maior */}
+          <polygon
+            points="100,10 173.2,55 173.2,145 100,190 26.8,145 26.8,55"
+            fill="none"
+            stroke="#7FA653"
+            strokeWidth="2"
+            opacity="0.8"
+          />
+          {/* Hexágono médio */}
+          <polygon
+            points="100,40 155.9,72.5 155.9,137.5 100,170 44.1,137.5 44.1,72.5"
+            fill="none"
+            stroke="#99CD85"
+            strokeWidth="1.5"
+            opacity="0.6"
+          />
+          {/* Hexágono menor */}
+          <polygon
+            points="100,70 127.9,90 127.9,130 100,150 72.1,130 72.1,90"
+            fill="none"
+            stroke="#CFE0BC"
+            strokeWidth="1"
+            opacity="0.4"
+          />
+          {/* Linhas conectivas internas */}
+          <line x1="100" y1="10" x2="100" y2="70" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+          <line x1="173.2" y1="55" x2="127.9" y2="90" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+          <line x1="173.2" y1="145" x2="127.9" y2="130" stroke="#63783D" strokeWidth="0.5" opacity="0.3" />
+        </svg>
+      </div>
+
+      {/* Faixa diagonal sutil com gradiente */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-1/2 -left-1/4 w-[150%] h-px bg-gradient-to-r from-transparent via-primary/12 to-transparent transform -rotate-12"
+          style={{ height: '120px', filter: 'blur(40px)' }}
+        />
+      </div>
+
+      {/* Triângulos minimalistas decorativos - espalhados */}
+      <div className="absolute top-1/4 right-1/4 w-16 h-16 opacity-[0.05] pointer-events-none animate-pulse-slow">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,15 90,85 10,85" fill="none" stroke="#7FA653" strokeWidth="2" />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-1/3 left-1/4 w-12 h-12 opacity-[0.05] pointer-events-none rotate-45 animate-pulse-slow" style={{ animationDelay: '1s' }}>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,15 90,85 10,85" fill="none" stroke="#99CD85" strokeWidth="1.5" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
 
           {/* Coluna Esquerda - Conteúdo */}

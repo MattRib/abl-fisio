@@ -155,6 +155,27 @@ export default function Hero() {
             <div className="absolute inset-0 -z-10">
               <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl" />
               <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-secondary/15 to-transparent rounded-full blur-3xl" />
+
+              {/* Gradient radial pulsante sutil */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-primary/5 via-transparent to-transparent rounded-full animate-pulse-subtle pointer-events-none" />
+            </div>
+
+            {/* Ondas orgânicas sutis - canto superior direito */}
+            <div className="absolute -top-12 -right-16 w-80 h-80 opacity-[0.06] pointer-events-none animate-float-slow">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                <defs>
+                  <linearGradient id="heroWaveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 1 }} />
+                    <stop offset="50%" style={{ stopColor: '#7FA653', stopOpacity: 0.8 }} />
+                    <stop offset="100%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.6 }} />
+                  </linearGradient>
+                </defs>
+                <path
+                  fill="url(#heroWaveGradient)"
+                  d="M43.7,-76.7C56.9,-69.3,68.4,-58.4,75.6,-44.8C82.8,-31.2,85.7,-15.6,86.3,0.4C86.9,16.4,85.2,32.8,77.8,46.3C70.4,59.8,57.3,70.4,42.8,77.5C28.3,84.6,12.4,88.2,-3.2,93.7C-18.8,99.2,-37.6,106.6,-53.1,100.8C-68.6,95,-80.8,76,-87.4,56.1C-94,36.2,-95,15.4,-91.7,-3.9C-88.4,-23.2,-80.8,-41,-69.7,-55.4C-58.6,-69.8,-43.9,-80.8,-28.4,-87.3C-12.9,-93.8,3.4,-95.8,18.5,-91.9C33.6,-88,47.5,-78.2,43.7,-76.7Z"
+                  transform="translate(100 100)"
+                />
+              </svg>
             </div>
 
             {/* Container principal - overflow visível para quebrar o círculo */}
@@ -177,6 +198,30 @@ export default function Hero() {
                   />
                 </div>
               </div>
+
+              {/* Linha curva conectiva entre ícones - camada z-10 */}
+              <svg
+                className="absolute inset-0 w-full h-full z-10 pointer-events-none opacity-[0.08]"
+                viewBox="0 0 420 420"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient id="connectionLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 0.6 }} />
+                    <stop offset="50%" style={{ stopColor: '#7FA653', stopOpacity: 0.4 }} />
+                    <stop offset="100%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.6 }} />
+                  </linearGradient>
+                </defs>
+                {/* Linha conectiva suave entre os três ícones */}
+                <path
+                  d="M 350 80 Q 300 150, 100 210 T 280 360"
+                  fill="none"
+                  stroke="url(#connectionLineGradient)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray="8 4"
+                />
+              </svg>
 
               {/* Elementos decorativos flutuantes - camada z-30 */}
 

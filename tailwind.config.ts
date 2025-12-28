@@ -235,9 +235,18 @@ const config: Config = {
       },
 
       // ========================================
+      // 🎨 BACKGROUND IMAGES
+      // ========================================
+
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+
+      // ========================================
       // 🎬 ANIMATIONS
       // ========================================
-      
+
       animation: {
         // Entrada
         "fade-in": "fadeIn 0.6s ease-in-out",

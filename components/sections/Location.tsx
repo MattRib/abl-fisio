@@ -12,13 +12,113 @@ export default function Location() {
     <section
       ref={ref}
       id="localizacao"
-      className={`py-16 md:py-24 bg-gradient-to-br from-secondary/10 to-white transition-all duration-700 ease-out ${
+      className={`py-16 md:py-24 bg-gradient-to-br from-secondary/10 to-white relative overflow-hidden transition-all duration-700 ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-8">
+      {/* Pin de localização gigante - Fundo direito */}
+      <div className="absolute top-1/2 -translate-y-1/2 right-12 w-80 h-80 md:w-[500px] md:h-[500px] opacity-[0.04] pointer-events-none">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <defs>
+            <linearGradient id="pinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 1 }} />
+              <stop offset="50%" style={{ stopColor: '#7FA653', stopOpacity: 0.8 }} />
+              <stop offset="100%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.6 }} />
+            </linearGradient>
+          </defs>
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            fill="url(#pinGradient)"
+            stroke="url(#pinGradient)"
+            strokeWidth="0.5"
+          />
+        </svg>
+      </div>
+
+      {/* Linhas de mapa abstratas - Grid de coordenadas */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
+        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          {/* Linhas verticais (longitude) */}
+          <line x1="200" y1="0" x2="200" y2="800" stroke="#7FA653" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="400" y1="0" x2="400" y2="800" stroke="#99CD85" strokeWidth="0.5" strokeDasharray="4 4" />
+          <line x1="600" y1="0" x2="600" y2="800" stroke="#7FA653" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="800" y1="0" x2="800" y2="800" stroke="#99CD85" strokeWidth="0.5" strokeDasharray="4 4" />
+          <line x1="1000" y1="0" x2="1000" y2="800" stroke="#7FA653" strokeWidth="1" strokeDasharray="4 4" />
+
+          {/* Linhas horizontais (latitude) */}
+          <line x1="0" y1="150" x2="1200" y2="150" stroke="#99CD85" strokeWidth="0.5" strokeDasharray="4 4" />
+          <line x1="0" y1="300" x2="1200" y2="300" stroke="#7FA653" strokeWidth="1" strokeDasharray="4 4" />
+          <line x1="0" y1="450" x2="1200" y2="450" stroke="#99CD85" strokeWidth="0.5" strokeDasharray="4 4" />
+          <line x1="0" y1="600" x2="1200" y2="600" stroke="#7FA653" strokeWidth="1" strokeDasharray="4 4" />
+        </svg>
+      </div>
+
+      {/* Ícone de trem minimalista - Canto superior esquerdo */}
+      <div className="absolute top-20 left-12 w-32 h-32 md:w-40 md:h-40 opacity-[0.03] pointer-events-none">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <defs>
+            <linearGradient id="trainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#7FA653', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#99CD85', stopOpacity: 0.8 }} />
+            </linearGradient>
+          </defs>
+          {/* Corpo do trem */}
+          <rect x="4" y="8" width="16" height="10" rx="2" fill="url(#trainGradient)" stroke="url(#trainGradient)" strokeWidth="0.5" />
+          {/* Janelas */}
+          <rect x="6" y="10" width="3" height="3" rx="0.5" fill="white" opacity="0.3" />
+          <rect x="10.5" y="10" width="3" height="3" rx="0.5" fill="white" opacity="0.3" />
+          <rect x="15" y="10" width="3" height="3" rx="0.5" fill="white" opacity="0.3" />
+          {/* Rodas */}
+          <circle cx="8" cy="19" r="1.5" fill="url(#trainGradient)" stroke="url(#trainGradient)" strokeWidth="0.5" />
+          <circle cx="16" cy="19" r="1.5" fill="url(#trainGradient)" stroke="url(#trainGradient)" strokeWidth="0.5" />
+          {/* Trilho */}
+          <line x1="2" y1="21" x2="22" y2="21" stroke="url(#trainGradient)" strokeWidth="1" />
+          <line x1="2" y1="22" x2="22" y2="22" stroke="url(#trainGradient)" strokeWidth="0.5" opacity="0.5" />
+        </svg>
+      </div>
+
+      {/* Path curvo conectando blocos - Jornada */}
+      <div className="absolute hidden lg:block top-1/2 left-1/4 w-1/2 h-64 opacity-[0.03] pointer-events-none">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 0.8 }} />
+              <stop offset="50%" style={{ stopColor: '#7FA653', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.6 }} />
+            </linearGradient>
+          </defs>
+          {/* Caminho curvo principal */}
+          <path
+            d="M 0,100 Q 100,50 200,100 T 400,100"
+            fill="none"
+            stroke="url(#pathGradient)"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeDasharray="8 6"
+          />
+          {/* Pontos de parada (marcos) */}
+          <circle cx="0" cy="100" r="6" fill="#99CD85" opacity="0.5" />
+          <circle cx="200" cy="100" r="6" fill="#7FA653" opacity="0.5" />
+          <circle cx="400" cy="100" r="6" fill="#CFE0BC" opacity="0.5" />
+        </svg>
+      </div>
+
+      {/* Mini pins decorativos espalhados */}
+      <div className="absolute top-1/4 left-1/3 w-6 h-6 opacity-[0.04] pointer-events-none animate-pulse-slow">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-primary">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-1/3 right-1/3 w-5 h-5 opacity-[0.04] pointer-events-none animate-pulse-slow" style={{ animationDelay: '0.7s' }}>
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-accent">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
 
           {/* Header centralizado */}
