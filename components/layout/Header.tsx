@@ -117,15 +117,18 @@ export default function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav 
-            className={`
-              md:hidden py-4 border-t transition-all duration-300
-              ${isScrolled ? 'border-gray-200/50' : 'border-gray-200'}
-            `} 
-            aria-label="Navegação mobile"
-          >
-            <ul className="space-y-4">
+        <nav
+          className={`
+            md:hidden overflow-hidden border-t transition-all duration-500 ease-in-out-expo
+            ${isScrolled ? 'border-gray-200/50' : 'border-gray-200'}
+            ${isMenuOpen
+              ? 'max-h-[500px] opacity-100 py-4'
+              : 'max-h-0 opacity-0 py-0'
+            }
+          `}
+          aria-label="Navegação mobile"
+        >
+          <ul className="space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -148,8 +151,7 @@ export default function Header() {
                 </a>
               </li>
             </ul>
-          </nav>
-        )}
+        </nav>
       </div>
     </header>
   );
