@@ -16,10 +16,21 @@ export default function TestimonialCard({
 
   return (
     <article
-      className={`bg-gradient-to-br from-white to-secondary/5 p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 flex flex-col h-full ${className}`}
+      className={`relative bg-gradient-to-br from-white to-secondary/5 p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 flex flex-col h-full overflow-hidden ${className}`}
     >
+      {/* Aspas decorativas gigantes no background */}
+      <div className="absolute top-4 right-4 md:top-6 md:right-6 pointer-events-none" aria-hidden="true">
+        <svg
+          className="w-24 h-24 md:w-32 md:h-32 text-primary/5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+        </svg>
+      </div>
+
       {/* Ícone de aspas decorativo */}
-      <div className="mb-6 flex-shrink-0">
+      <div className="mb-6 flex-shrink-0 relative z-10">
         <svg
           className="w-10 h-10 text-primary/20"
           fill="currentColor"
@@ -31,7 +42,7 @@ export default function TestimonialCard({
       </div>
 
       {/* Avaliação - 5 estrelas */}
-      <div className="mb-6 flex gap-1 flex-shrink-0" aria-label="Avaliação: 5 de 5 estrelas">
+      <div className="mb-6 flex gap-1 flex-shrink-0 relative z-10" aria-label="Avaliação: 5 de 5 estrelas">
         {[...Array(5)].map((_, index) => (
           <svg
             key={index}
@@ -45,14 +56,14 @@ export default function TestimonialCard({
       </div>
 
       {/* Texto do depoimento */}
-      <blockquote className="flex-grow mb-8 min-h-[120px]">
+      <blockquote className="flex-grow mb-8 min-h-[120px] relative z-10">
         <p className="text-base md:text-lg text-dark/75 leading-relaxed italic">
           {quote}
         </p>
       </blockquote>
 
       {/* Informações do autor */}
-      <footer className="flex items-center space-x-4 pt-6 border-t border-gray-100 flex-shrink-0">
+      <footer className="flex items-center space-x-4 pt-6 border-t border-gray-100 flex-shrink-0 relative z-10">
         {/* Avatar com inicial */}
         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/15 to-secondary/20 rounded-full flex items-center justify-center">
           <span className="text-primary/90 font-semibold text-lg">
