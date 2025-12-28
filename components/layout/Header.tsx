@@ -29,12 +29,14 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 transition-all duration-300">
-      <div 
+      <div
         className={`
           container mx-auto transition-all duration-500 ease-out
-          ${isScrolled 
-            ? 'bg-white/80 backdrop-blur-lg shadow-lg rounded-2xl' 
-            : 'bg-transparent'
+          ${isScrolled
+            ? 'bg-white/80 backdrop-blur-lg shadow-lg rounded-2xl'
+            : isMenuOpen
+              ? 'bg-white/95 backdrop-blur-sm shadow-md rounded-2xl'
+              : 'bg-transparent'
           }
         `}
       >
@@ -74,9 +76,9 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Touch target mínimo 48px */}
           <button
-            className="md:hidden p-2 text-dark hover:text-primary transition-colors"
+            className="md:hidden p-3 text-dark hover:text-primary transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Menu de navegação"
             aria-expanded={isMenuOpen}

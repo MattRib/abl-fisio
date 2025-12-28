@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
 
           {/* Informações do Negócio */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-xl font-bold mb-4 text-primary">
               {BUSINESS.name}
             </h3>
@@ -20,10 +20,10 @@ export default function Footer() {
           </div>
 
           {/* Links de Navegação */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-xl font-bold mb-4 text-primary">Navegação</h3>
             <nav aria-label="Links do rodapé">
-              <ul className="space-y-3 text-sm">
+              <ul className="space-y-3 text-sm flex flex-col items-center md:items-start">
                 <li>
                   <a
                     href="#servicos"
@@ -63,9 +63,9 @@ export default function Footer() {
           </div>
 
           {/* Informações de Contato */}
-          <div>
+          <div className="text-center md:text-left">
             <h3 className="text-xl font-bold mb-4 text-primary">Contato</h3>
-            <address className="not-italic text-sm text-white/70 space-y-3">
+            <address className="not-italic text-sm text-white/70 space-y-3 flex flex-col items-center md:items-start">
               <div>
                 <p className="font-semibold text-white/90 mb-1">Endereço</p>
                 <p>{ADDRESS.street}, {ADDRESS.number}</p>

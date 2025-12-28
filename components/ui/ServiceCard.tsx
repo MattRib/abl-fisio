@@ -30,23 +30,23 @@ export default function ServiceCard({
       {/* Gradiente base (sempre visível) - mais suave */}
       <div className="absolute inset-0 bg-gradient-to-t from-darker/60 via-transparent to-transparent" />
 
-      {/* Overlay hover */}
-      <div className="absolute inset-0 bg-primary/65 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Overlay hover - Desktop only */}
+      <div className="absolute inset-0 bg-primary/65 opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Conteúdo */}
       <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-end">
         {/* Título - sempre visível */}
-        <h3 className="text-xl md:text-2xl font-semibold text-white mb-2 group-hover:mb-4 transition-all duration-500">
+        <h3 className="text-xl md:text-2xl font-semibold text-white mb-2 md:group-hover:mb-4 transition-all duration-500">
           {title}
         </h3>
 
-        {/* Descrição - aparece no hover */}
-        <p className="text-sm md:text-base text-white/90 leading-relaxed max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+        {/* Descrição - sempre visível no mobile, hover no desktop */}
+        <p className="text-sm md:text-base text-white/90 leading-relaxed max-h-40 opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-40 md:group-hover:opacity-100 transition-all duration-500 overflow-hidden">
           {description}
         </p>
 
-        {/* Indicador de ação */}
-        <span className="inline-flex items-center gap-2 text-sm font-medium text-white/80 mt-0 max-h-0 opacity-0 group-hover:mt-4 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-500 delay-100">
+        {/* Indicador de ação - Desktop only */}
+        <span className="hidden md:inline-flex items-center gap-2 text-sm font-medium text-white/80 mt-0 max-h-0 opacity-0 group-hover:mt-4 group-hover:max-h-10 group-hover:opacity-100 transition-all duration-500 delay-100">
           Saiba mais
           <svg
             className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"

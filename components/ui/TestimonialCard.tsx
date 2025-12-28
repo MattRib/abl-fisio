@@ -16,10 +16,10 @@ export default function TestimonialCard({
 
   return (
     <article
-      className={`bg-gradient-to-br from-white to-secondary/5 p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 flex flex-col ${className}`}
+      className={`bg-gradient-to-br from-white to-secondary/5 p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100/50 flex flex-col h-full ${className}`}
     >
       {/* Ícone de aspas decorativo */}
-      <div className="mb-8">
+      <div className="mb-8 flex-shrink-0">
         <svg
           className="w-10 h-10 text-primary/20"
           fill="currentColor"
@@ -31,14 +31,14 @@ export default function TestimonialCard({
       </div>
 
       {/* Texto do depoimento */}
-      <blockquote className="flex-grow mb-8">
+      <blockquote className="flex-grow mb-8 min-h-[120px]">
         <p className="text-base md:text-lg text-dark/75 leading-relaxed italic">
           {quote}
         </p>
       </blockquote>
 
       {/* Informações do autor */}
-      <footer className="flex items-center space-x-4 pt-6 border-t border-gray-100">
+      <footer className="flex items-center space-x-4 pt-6 border-t border-gray-100 flex-shrink-0">
         {/* Avatar com inicial */}
         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/15 to-secondary/20 rounded-full flex items-center justify-center">
           <span className="text-primary/90 font-semibold text-lg">

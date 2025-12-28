@@ -13,11 +13,11 @@ export default function Location() {
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">
               Localização
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-darker mt-3 mb-4">
+            <h2 className="text-fluid-h2 font-bold text-darker mt-3 mb-4">
               Onde Nos{" "}
               <span className="text-primary">Encontrar</span>
             </h2>
-            <p className="text-base md:text-lg text-dark/75 leading-relaxed max-w-3xl mx-auto mb-6">
+            <p className="text-fluid-body text-dark/75 leading-relaxed max-w-3xl mx-auto mb-6">
               Localizado no coração do {ADDRESS.neighborhood}, nosso consultório oferece
               atendimento de fisioterapia com fácil acesso para toda a região da Zona Norte
               do Rio de Janeiro.
@@ -151,6 +151,66 @@ export default function Location() {
                 </div>
               </div>
 
+              {/* Transporte Público - Visível apenas no mobile */}
+              <div className="lg:hidden bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg
+                      className="w-6 h-6 text-accent"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-semibold text-darker mb-3">
+                      Acesso por Transporte Público
+                    </h3>
+                    <div className="space-y-4 text-dark/80">
+                      {/* Metrô */}
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <div>
+                          <p className="font-medium text-darker">Metrô Méier</p>
+                          <p className="text-sm text-dark/70">5 minutos a pé</p>
+                        </div>
+                      </div>
+
+                      {/* Ônibus */}
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        </svg>
+                        <div>
+                          <p className="font-medium text-darker">Linhas de Ônibus</p>
+                          <p className="text-sm text-dark/70">Diversas linhas na Dias da Cruz</p>
+                        </div>
+                      </div>
+
+                      {/* Estacionamento */}
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                        <div>
+                          <p className="font-medium text-darker">Estacionamento</p>
+                          <p className="text-sm text-dark/70">Vagas disponíveis nas proximidades</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Contato */}
               <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
                 <div className="flex items-start space-x-4">
@@ -205,28 +265,91 @@ export default function Location() {
 
             </div>
 
-            {/* Coluna Direita - Mapa */}
-            <div className="relative">
+            {/* Coluna Direita - Mapa e Transporte (Desktop) */}
+            <div className="space-y-8">
               {/* Container do mapa */}
-              <div className="relative w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                {/*
-                  Google Maps Embed
-                  Substitua o src abaixo pela URL real do Google Maps Embed
-                */}
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2345678901234!2d-43.2789!3d-22.9039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU0JzE0LjAiUyA0M8KwMTYnNDQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Mapa de localização - ${ADDRESS.full}`}
-                />
+              <div className="relative">
+                <div className="relative w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                  {/*
+                    Google Maps Embed
+                    Substitua o src abaixo pela URL real do Google Maps Embed
+                  */}
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2345678901234!2d-43.2789!3d-22.9039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU0JzE0LjAiUyA0M8KwMTYnNDQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Mapa de localização - ${ADDRESS.full}`}
+                    importance="low"
+                  />
+                </div>
+
+                {/* Elemento decorativo */}
+                <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10" />
               </div>
 
-              {/* Elemento decorativo */}
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10" />
+              {/* Transporte Público - Visível apenas no desktop */}
+              <div className="hidden lg:block bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <svg
+                      className="w-6 h-6 text-accent"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="font-semibold text-darker mb-3">
+                      Acesso por Transporte Público
+                    </h3>
+                    <div className="space-y-4 text-dark/80">
+                      {/* Metrô */}
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <div>
+                          <p className="font-medium text-darker">Metrô Méier</p>
+                          <p className="text-sm text-dark/70">5 minutos a pé</p>
+                        </div>
+                      </div>
+
+                      {/* Ônibus */}
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        </svg>
+                        <div>
+                          <p className="font-medium text-darker">Linhas de Ônibus</p>
+                          <p className="text-sm text-dark/70">Diversas linhas na Dias da Cruz</p>
+                        </div>
+                      </div>
+
+                      {/* Estacionamento */}
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                        </svg>
+                        <div>
+                          <p className="font-medium text-darker">Estacionamento</p>
+                          <p className="text-sm text-dark/70">Vagas disponíveis nas proximidades</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>

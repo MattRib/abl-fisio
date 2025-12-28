@@ -9,11 +9,11 @@ export default function Differentials() {
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">
               Por que nos escolher
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-darker mt-3 mb-4">
+            <h2 className="text-fluid-h2 font-bold text-darker mt-3 mb-4">
               Números que{" "}
               <span className="text-primary">Inspiram Confiança</span>
             </h2>
-            <p className="text-base md:text-lg text-dark/70 max-w-2xl mx-auto">
+            <p className="text-fluid-body text-dark/70 max-w-2xl mx-auto">
               Nossa dedicação se reflete em cada resultado
             </p>
           </div>
@@ -131,7 +131,7 @@ export default function Differentials() {
 
           {/* Texto de apoio */}
           <div className="mt-12 md:mt-16 mb-8 md:mb-12 text-center max-w-3xl mx-auto">
-            <p className="text-base md:text-lg text-dark/80 leading-relaxed">
+            <p className="text-fluid-body text-dark/80 leading-relaxed">
               Ao longo de anos dedicados à reabilitação e ao bem-estar, construímos nossa
               prática com base em três pilares: escuta atenta, técnica apurada e compromisso
               genuíno com cada pessoa que atendemos.
