@@ -18,6 +18,19 @@ export default function TestimonialCard({
     <article
       className={`relative bg-gradient-to-br from-white to-secondary/5 p-8 md:p-10 rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100/50 flex flex-col h-full overflow-hidden ${className}`}
     >
+      {/* Badge Depoimento Verificado */}
+      <div className="absolute top-4 left-4 md:top-6 md:left-6 z-20 inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary/10 border border-primary/30 rounded-full">
+        <svg
+          className="w-3.5 h-3.5 text-primary"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+        >
+          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+        </svg>
+        <span className="text-xs font-medium text-primary">Verificado</span>
+      </div>
+
       {/* Aspas decorativas gigantes no background */}
       <div className="absolute top-4 right-4 md:top-6 md:right-6 pointer-events-none" aria-hidden="true">
         <svg
@@ -29,20 +42,8 @@ export default function TestimonialCard({
         </svg>
       </div>
 
-      {/* Ícone de aspas decorativo */}
-      <div className="mb-6 flex-shrink-0 relative z-10">
-        <svg
-          className="w-10 h-10 text-primary/20"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
-        </svg>
-      </div>
-
       {/* Avaliação - 5 estrelas */}
-      <div className="mb-6 flex gap-1 flex-shrink-0 relative z-10" aria-label="Avaliação: 5 de 5 estrelas">
+      <div className="mt-8 mb-6 flex gap-1 flex-shrink-0 relative z-10" aria-label="Avaliação: 5 de 5 estrelas">
         {[...Array(5)].map((_, index) => (
           <svg
             key={index}
