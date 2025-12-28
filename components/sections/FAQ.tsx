@@ -80,13 +80,113 @@ export default function FAQ() {
     <section
       ref={ref}
       id="faq"
-      className={`py-16 md:py-24 bg-white bg-grid-pattern-dense transition-all duration-700 ease-out ${
+      className={`py-16 md:py-24 bg-white bg-grid-pattern-dense relative overflow-hidden transition-all duration-700 ease-out ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-8">
+      {/* Question mark gigante estilizado - Fundo esquerdo */}
+      <div className="absolute top-1/2 -translate-y-1/2 left-8 md:left-16 w-64 h-64 md:w-96 md:h-96 opacity-[0.025] pointer-events-none">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <defs>
+            <linearGradient id="questionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 1 }} />
+              <stop offset="50%" style={{ stopColor: '#7FA653', stopOpacity: 0.8 }} />
+              <stop offset="100%" style={{ stopColor: '#CFE0BC', stopOpacity: 0.6 }} />
+            </linearGradient>
+          </defs>
+          {/* Parte superior do ? */}
+          <path
+            d="M 30,25 Q 30,10 50,10 Q 70,10 70,25 Q 70,35 60,40 L 55,50 Q 52,55 52,60"
+            fill="none"
+            stroke="url(#questionGradient)"
+            strokeWidth="8"
+            strokeLinecap="round"
+          />
+          {/* Ponto do ? */}
+          <circle cx="52" cy="75" r="6" fill="url(#questionGradient)" />
+        </svg>
+      </div>
+
+      {/* Lâmpada abstrata - Canto superior direito (Iluminação) */}
+      <div className="absolute top-12 right-12 md:right-20 w-32 h-32 md:w-40 md:h-40 opacity-[0.03] pointer-events-none">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          <defs>
+            <linearGradient id="bulbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#99CD85', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#7FA653', stopOpacity: 0.8 }} />
+            </linearGradient>
+          </defs>
+          {/* Bulbo da lâmpada */}
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z"
+            fill="url(#bulbGradient)"
+            stroke="url(#bulbGradient)"
+            strokeWidth="0.5"
+          />
+          {/* Base da lâmpada */}
+          <rect x="9" y="18" width="6" height="2" rx="0.5" fill="url(#bulbGradient)" opacity="0.7" />
+          <rect x="9.5" y="20" width="5" height="1.5" rx="0.5" fill="url(#bulbGradient)" opacity="0.5" />
+          {/* Raios de luz */}
+          <line x1="12" y1="2" x2="12" y2="0.5" stroke="#99CD85" strokeWidth="0.8" opacity="0.6" />
+          <line x1="17" y1="4" x2="18" y2="3" stroke="#99CD85" strokeWidth="0.8" opacity="0.6" />
+          <line x1="7" y1="4" x2="6" y2="3" stroke="#99CD85" strokeWidth="0.8" opacity="0.6" />
+        </svg>
+      </div>
+
+      {/* Círculos concêntricos - Busca/Foco */}
+      <div className="absolute bottom-20 right-1/4 w-48 h-48 opacity-[0.02] pointer-events-none animate-pulse-slow">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          {/* Círculos de busca */}
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#99CD85" strokeWidth="0.8" opacity="0.4" />
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#7FA653" strokeWidth="1" opacity="0.6" />
+          <circle cx="50" cy="50" r="25" fill="none" stroke="#99CD85" strokeWidth="1.2" opacity="0.8" />
+          <circle cx="50" cy="50" r="15" fill="none" stroke="#CFE0BC" strokeWidth="1.5" opacity="1" />
+          {/* Alça da lupa */}
+          <line x1="75" y1="75" x2="90" y2="90" stroke="#7FA653" strokeWidth="3" strokeLinecap="round" opacity="0.7" />
+        </svg>
+      </div>
+
+      {/* Linhas de texto abstratas - Fundo (Respostas) */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.015] overflow-hidden">
+        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+          {/* Simulando linhas de texto/respostas */}
+          {/* Bloco 1 */}
+          <line x1="100" y1="100" x2="500" y2="100" stroke="#7FA653" strokeWidth="2" strokeLinecap="round" />
+          <line x1="100" y1="120" x2="450" y2="120" stroke="#99CD85" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="100" y1="140" x2="480" y2="140" stroke="#7FA653" strokeWidth="1.5" strokeLinecap="round" />
+
+          {/* Bloco 2 */}
+          <line x1="700" y1="200" x2="1100" y2="200" stroke="#99CD85" strokeWidth="2" strokeLinecap="round" />
+          <line x1="700" y1="220" x2="1050" y2="220" stroke="#7FA653" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="700" y1="240" x2="1080" y2="240" stroke="#99CD85" strokeWidth="1.5" strokeLinecap="round" />
+
+          {/* Bloco 3 */}
+          <line x1="150" y1="400" x2="550" y2="400" stroke="#7FA653" strokeWidth="2" strokeLinecap="round" />
+          <line x1="150" y1="420" x2="500" y2="420" stroke="#99CD85" strokeWidth="1.5" strokeLinecap="round" />
+
+          {/* Bloco 4 */}
+          <line x1="650" y1="550" x2="1050" y2="550" stroke="#99CD85" strokeWidth="2" strokeLinecap="round" />
+          <line x1="650" y1="570" x2="1000" y2="570" stroke="#7FA653" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="650" y1="590" x2="1030" y2="590" stroke="#99CD85" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </div>
+
+      {/* Ícones de pergunta/resposta decorativos */}
+      <div className="absolute top-1/4 right-1/3 w-8 h-8 opacity-[0.03] pointer-events-none">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-primary">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-1/3 left-1/4 w-7 h-7 opacity-[0.03] pointer-events-none animate-pulse-slow" style={{ animationDelay: '0.5s' }}>
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-accent">
+          <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
 
           {/* Header centralizado */}
