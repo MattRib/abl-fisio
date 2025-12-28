@@ -15,17 +15,20 @@ export default function Testimonials() {
     {
       quote: "Cheguei com dor no ombro e sem conseguir levantar o braço. Depois de algumas sessões, já notei melhora. A fisioterapeuta explica tudo com clareza e tem muito cuidado. Me sinto segura no tratamento.",
       name: "Maria Silva",
-      role: "Fisioterapia Ortopédica"
+      role: "Fisioterapia Ortopédica",
+      image: "/assets/testimunials/maria.png"
     },
     {
       quote: "Sofria com dores nas costas há anos. O RPG me ajudou a entender melhor minha postura. As sessões são intensas, mas já sinto diferença no dia a dia. Vale muito a pena.",
       name: "João Santos",
-      role: "RPG"
+      role: "RPG",
+      image: "/assets/testimunials/joão.png"
     },
     {
       quote: "Fiz drenagem linfática após a cirurgia e o resultado foi além do que esperava. O inchaço diminuiu bem e a profissional é muito atenciosa. Recomendo.",
       name: "Ana Costa",
-      role: "Drenagem Linfática"
+      role: "Drenagem Linfática",
+      image: "/assets/testimunials/ana.png"
     }
   ];
 
@@ -80,6 +83,7 @@ export default function Testimonials() {
                     quote={testimonial.quote}
                     name={testimonial.name}
                     role={testimonial.role}
+                    image={testimonial.image}
                   />
                 </div>
               ))}
@@ -93,6 +97,7 @@ export default function Testimonials() {
                   quote={testimonial.quote}
                   name={testimonial.name}
                   role={testimonial.role}
+                  image={testimonial.image}
                 />
               ))}
             </div>

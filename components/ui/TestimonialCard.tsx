@@ -1,7 +1,10 @@
+import Image from "next/image";
+
 interface TestimonialCardProps {
   quote: string;
   name: string;
   role: string;
+  image?: string;
   className?: string;
 }
 
@@ -9,9 +12,10 @@ export default function TestimonialCard({
   quote,
   name,
   role,
+  image,
   className = "",
 }: TestimonialCardProps) {
-  // Pega primeira letra do nome para o avatar
+  // Pega primeira letra do nome para o avatar (fallback)
   const initial = name.charAt(0).toUpperCase();
 
   return (
@@ -43,7 +47,7 @@ export default function TestimonialCard({
       </div>
 
       {/* Avaliação - 5 estrelas */}
-      <div className="mt-8 mb-6 flex gap-1 flex-shrink-0 relative z-10" aria-label="Avaliação: 5 de 5 estrelas">
+      <div className="mt-12 mb-6 flex gap-1 flex-shrink-0 relative z-10" aria-label="Avaliação: 5 de 5 estrelas">
         {[...Array(5)].map((_, index) => (
           <svg
             key={index}
@@ -65,11 +69,21 @@ export default function TestimonialCard({
 
       {/* Informações do autor */}
       <footer className="flex items-center space-x-4 pt-6 border-t border-gray-100 flex-shrink-0 relative z-10">
-        {/* Avatar com inicial */}
-        <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/15 to-secondary/20 rounded-full flex items-center justify-center">
-          <span className="text-primary/90 font-semibold text-lg">
-            {initial}
-          </span>
+        {/* Avatar com foto ou inicial */}
+        <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary/15 to-secondary/20 rounded-full flex items-center justify-center overflow-hidden">
+          {image ? (
+            <Image
+              src={image}
+              alt={`Foto de ${name}`}
+              width={48}
+              height={48}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-primary/90 font-semibold text-lg">
+              {initial}
+            </span>
+          )}
         </div>
 
         {/* Nome e role */}
