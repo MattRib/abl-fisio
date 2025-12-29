@@ -12,6 +12,10 @@ const About = dynamic(() => import('@/components/sections/About'), {
   loading: () => <div className="py-16 md:py-24" />,
 });
 
+const Team = dynamic(() => import('@/components/sections/Team'), {
+  loading: () => <div className="py-16 md:py-24" />,
+});
+
 const Differentials = dynamic(() => import('@/components/sections/Differentials'), {
   loading: () => <div className="py-16 md:py-24" />,
 });
@@ -43,6 +47,9 @@ export default function Home() {
 
       {/* About Section - Sobre o consultório e missão - Lazy loaded */}
       <About />
+
+      {/* Team Section - Equipe de profissionais - Lazy loaded */}
+      <Team />
 
       {/* Differentials Section - Diferenciais competitivos - Lazy loaded */}
       <Differentials />
