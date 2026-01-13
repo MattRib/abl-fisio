@@ -6,7 +6,7 @@
 export const BUSINESS = {
   name: "ABL Fisioterapia",
   shortName: "ABL Fisioterapia",
-  description: "Consultório de fisioterapia especializado no Méier, Rio de Janeiro. Atendimento em fisioterapia ortopédica, neurológica, respiratória, RPG e pilates clínico.",
+  description: "Consultório de fisioterapia especializado no Méier, Rio de Janeiro. Atendimento humanizado e próximo de você.",
   
   // Credenciais (substituir pelos valores reais)
   cnpj: "63.337.048/0001-00",
@@ -20,18 +20,18 @@ export const CONTACT = {
 } as const;
 
 export const ADDRESS = {
-  street: "Rua Silva Rabelo",
+  street: "Rua Silva Rabêlo",
   number: "43",
   neighborhood: "Méier",
   city: "Rio de Janeiro",
   state: "RJ",
   stateCode: "RJ",
-  zipCode: "20720-000",
+  zipCode: "20735-080",
   country: "Brasil",
   countryCode: "BR",
   
   // Endereço formatado completo
-  full: "Rua Silva Rabelo, 43 - Méier, Rio de Janeiro - RJ",
+  full: "Rua Silva Rabêlo, 43 - Méier, Rio de Janeiro - RJ",
   
   // Coordenadas (substituir pelas coordenadas reais do Google Maps)
   coordinates: {
