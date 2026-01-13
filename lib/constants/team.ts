@@ -17,7 +17,7 @@ export const TEAM_MEMBERS = [
       "Liberação Miofascial",
       "Drenagem Linfática",
     ],
-    imageUrl: "/images/team/leticia.jpg", // Placeholder para imagem futura
+    imageUrl: "/assets/about_us/foto_leticia.jpg",
   },
   {
     id: "anna-beatriz",
@@ -30,6 +30,6 @@ export const TEAM_MEMBERS = [
       "Exercícios Terapêuticos",
       "Apoio ao Paciente",
     ],
-    imageUrl: "/images/team/anna-beatriz.jpg", // Placeholder para imagem futura
+    imageUrl: "/assets/about_us/foto_anna.jpg",
   },
 ] as const;

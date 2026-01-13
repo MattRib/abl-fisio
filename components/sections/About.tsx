@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 
 export default function About() {
@@ -152,46 +153,16 @@ export default function About() {
             {/* Shape decorativo sutil - canto superior direito */}
             <div className="absolute top-4 right-4 w-20 h-20 border-4 border-primary/10 rounded-full -z-5" />
 
-            {/* Container da imagem com proporção fixa - Preparado para next/image */}
+            {/* Container da imagem com proporção fixa */}
             <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-white via-secondary/10 to-primary/5 rounded-2xl overflow-hidden shadow-xl border border-gray-100/50">
-              {/*
-                Placeholder temporário
-                Substituir por:
-                <Image
-                  src="/images/about-clinic.jpg"
-                  alt="Consultório de Fisioterapia no Méier"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority={false}
-                />
-              */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary/5 to-transparent">
-                <div className="text-center p-8">
-                  {/* Ícone médico sutil */}
-                  <div className="w-20 h-20 mx-auto mb-4 bg-white/80 rounded-full flex items-center justify-center shadow-sm">
-                    <svg
-                      className="w-10 h-10 text-primary/60"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm font-medium text-darker/70">
-                    Foto do consultório
-                  </p>
-                  <p className="text-xs text-dark/50 mt-1">
-                    Recomendado: 800×600px
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/assets/about_us/foto_clinica.jpg"
+                alt="Consultório de Fisioterapia ABL - Ambiente acolhedor e equipado no Méier, Rio de Janeiro"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={false}
+              />
 
               {/* Overlay sutil para profundidade */}
               <div className="absolute inset-0 bg-gradient-to-t from-darker/5 to-transparent pointer-events-none" />

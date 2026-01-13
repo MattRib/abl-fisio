@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useScrollReveal } from "@/lib/hooks/useScrollReveal";
 import { TEAM_MEMBERS } from "@/lib/constants/team";
 
@@ -60,53 +61,18 @@ export default function Team() {
             {TEAM_MEMBERS.map((member, index) => (
               <article
                 key={member.id}
-                className={`group bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-premium transition-all duration-500 ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                className="bg-white rounded-2xl overflow-hidden shadow-soft"
               >
-                {/* Imagem do membro - Placeholder preparado para next/image */}
-                <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-secondary/20 via-background-soft to-primary/10 overflow-hidden">
-                  {/*
-                    Placeholder temporário
-                    Substituir por:
-                    <Image
-                      src={member.imageUrl}
-                      alt={`${member.name} - ${member.role}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      priority={false}
-                    />
-                  */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-6">
-                      {/* Ícone de usuário sutil */}
-                      <div className="w-20 h-20 mx-auto mb-3 bg-white/90 rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
-                        <svg
-                          className="w-10 h-10 text-primary/60"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-xs font-medium text-text-secondary/70">
-                        Foto profissional
-                      </p>
-                      <p className="text-xs text-text-muted/50 mt-0.5">
-                        800×600px recomendado
-                      </p>
-                    </div>
-                  </div>
+                {/* Imagem do membro */}
+                <div className="relative w-full aspect-[4/5] bg-gradient-to-br from-secondary/20 via-background-soft to-primary/10 overflow-hidden">
+                  <Image
+                    src={member.imageUrl}
+                    alt={`${member.name} - ${member.role} na Fisioterapia ABL no Méier`}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 800px) 100vw, 50vw"
+                    priority={false}
+                  />
 
                   {/* Overlay gradiente sutil */}
                   <div className="absolute inset-0 bg-gradient-to-t from-darker/10 to-transparent pointer-events-none" />
