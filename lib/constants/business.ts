@@ -16,7 +16,7 @@ export const CONTACT = {
   phone: "+5521999124720",
   phoneFormatted: "(21) 99912-4720",
   whatsapp: "5521999124720",
-  email: "contato@exemplo.com.br", // Adicionar email real se houver
+  email: "contato@ablfisioterapia.com.br ", // Adicionar email real se houver
 } as const;
 
 export const ADDRESS = {
