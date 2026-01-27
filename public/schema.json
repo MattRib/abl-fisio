@@ -10,7 +10,7 @@
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rua Silva Rabelo, 40",
+    "streetAddress": "Rua Silva Rabelo, 43",
     "addressLocality": "Méier",
     "addressRegion": "RJ",
     "postalCode": "20720-000",

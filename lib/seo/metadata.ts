@@ -5,7 +5,7 @@ import { BUSINESS, SITE, ADDRESS } from "@/lib/constants";
  * Metadata principal da landing page
  */
 export const metadata: Metadata = {
-  title: `${BUSINESS.shortName} | Rua Silva Rabelo, 40 - ${ADDRESS.neighborhood}, ${ADDRESS.city}`,
+  title: `${BUSINESS.shortName} | Rua Silva Rabelo, 43 - ${ADDRESS.neighborhood}, ${ADDRESS.city}`,
   description: BUSINESS.description,
   keywords: [
     "fisioterapia",
