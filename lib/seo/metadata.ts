@@ -48,4 +48,10 @@ export const metadata: Metadata = {
     // Adicionar após configurar Google Search Console
     google: "",
   },
+
+  icons: {
+    icon: "/assets/navigator/liftapp-removebg-preview.png",
+    shortcut: "/assets/navigator/liftapp-removebg-preview.png",
+    apple: "/assets/navigator/liftapp-removebg-preview.png",
+  },
 };
