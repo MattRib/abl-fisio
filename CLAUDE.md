@@ -116,7 +116,7 @@ Toda contribuição deve respeitar:
 
 * Cidade, bairro e endereço corretos
 * Méier – Rio de Janeiro
-* Rua Silva Rabelo, 40
+* Rua Silva Rabelo, 43
 
 ### Dados Estruturados
 
