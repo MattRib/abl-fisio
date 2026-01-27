@@ -19,41 +19,8 @@ const nextConfig: NextConfig = {
   // Compressão
   compress: true,
 
-  // Headers de Segurança e Performance
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          },
-        ],
-      },
-      {
-        source: '/assets/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ];
-  },
+  // Nota: Headers de segurança estão configurados no arquivo .htaccess
+  // para hospedagem Apache/Hostinger (não funcionam com output: export)
 };
 
 export default nextConfig;

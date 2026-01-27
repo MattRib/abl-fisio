@@ -3,6 +3,7 @@
 import { BUSINESS } from "@/lib/constants";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/utils/whatsapp";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,10 +60,17 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#"
-            className="text-2xl font-bold text-dark hover:text-primary transition-colors"
+            className="flex items-center hover:opacity-80 transition-opacity relative z-10"
             aria-label="Página inicial"
           >
-            {BUSINESS.shortName}
+            <Image
+              src="/navbar/liftapp-removebg-preview.png"
+              alt={`${BUSINESS.shortName} - Logo`}
+              width={160}
+              height={64}
+              priority
+              className="h-60 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

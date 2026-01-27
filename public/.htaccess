@@ -1,0 +1,139 @@
+# ============================================
+# ABL Fisioterapia - Apache Configuration
+# Headers de Segurança e Performance
+# ============================================
+
+# Habilitar RewriteEngine
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+</IfModule>
+
+# ============================================
+# HEADERS DE SEGURANÇA
+# ============================================
+
+<IfModule mod_headers.c>
+  # DNS Prefetch Control
+  Header set X-DNS-Prefetch-Control "on"
+
+  # Previne clickjacking (permite apenas no mesmo domínio)
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Previne MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Referrer Policy (controla informações enviadas)
+  Header always set Referrer-Policy "origin-when-cross-origin"
+
+  # XSS Protection (compatibilidade com navegadores antigos)
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Strict Transport Security (força HTTPS) - Descomente após configurar SSL
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ============================================
+# CACHE CONTROL - PERFORMANCE
+# ============================================
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Imagens (1 ano)
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fontes (1 ano)
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+
+  # CSS e JavaScript (1 ano)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # HTML (1 hora - para atualizações mais rápidas)
+  ExpiresByType text/html "access plus 1 hour"
+
+  # JSON e XML
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+</IfModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+  # Assets estáticos (immutable - nunca mudam)
+  <FilesMatch "\.(jpg|jpeg|png|webp|avif|svg|ico|woff2|woff|ttf|css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML (cache curto)
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ============================================
+# COMPRESSÃO GZIP
+# ============================================
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ============================================
+# TIPOS MIME
+# ============================================
+
+<IfModule mod_mime.c>
+  # JavaScript
+  AddType application/javascript js
+  AddType text/javascript js
+
+  # Imagens modernas
+  AddType image/webp webp
+  AddType image/avif avif
+
+  # Fontes
+  AddType font/woff2 woff2
+  AddType font/woff woff
+  AddType font/ttf ttf
+
+  # Manifest
+  AddType application/manifest+json webmanifest
+</IfModule>
+
+# ============================================
+# SEGURANÇA ADICIONAL
+# ============================================
+
+# Bloqueia acesso a arquivos sensíveis
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Previne listagem de diretórios
+Options -Indexes
+
+# ============================================
+# REDIRECIONAMENTO HTTPS (descomente após configurar SSL)
+# ============================================
+
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} off
+#   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
