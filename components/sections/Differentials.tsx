@@ -21,8 +21,8 @@ export default function Differentials() {
             // Animação para "5+"
             animateCount(0, 5, 1500, setCount1);
 
-            // Animação para "1000+"
-            animateCount(0, 1000, 2000, setCount2);
+            // Animação para "200+"
+            animateCount(0, 200, 2000, setCount2);
 
             // Animação para "6"
             animateCount(0, 6, 1200, setCount3);
