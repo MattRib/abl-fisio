@@ -8,7 +8,7 @@ export const TEAM_MEMBERS = [
     id: "leticia",
     name: "Letícia Oliveira",
     role: "Fisioterapeuta",
-    credentials: "CREFITO",
+    credentials: "CREFITO - 396149-F",
     bio: "Especialista em fisioterapia ortopédica e traumatológica, com formação em técnicas avançadas de terapia manual e neuromodulação. Comprometida em oferecer um tratamento humanizado e eficaz para cada paciente.",
     specialties: [
       "Fisioterapia Ortopédica",
