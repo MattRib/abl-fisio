@@ -34,6 +34,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://api.whatsapp.com" />
 
+        {/* Web App Manifest */}
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+
         {/* Structured Data - SEO */}
         <script
           type="application/ld+json"
