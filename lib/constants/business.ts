@@ -6,7 +6,7 @@
 export const BUSINESS = {
   name: "ABL Fisioterapia",
   shortName: "ABL Fisioterapia",
-  description: "Consultório de fisioterapia especializado no Méier, Rio de Janeiro. Atendimento humanizado e próximo de você.",
+  description: "Consultório de fisioterapia no Méier, Rio de Janeiro. Atendimento humanizado e próximo de você.",
   
   // Credenciais (substituir pelos valores reais)
   cnpj: "63.337.048/0001-00",
