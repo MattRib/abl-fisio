@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsAppButton from "@/components/ui/FloatingWhatsAppButton";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
+import CookieConsent from "@/components/ui/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -59,6 +60,9 @@ export default function RootLayout({
 
         {/* Floating WhatsApp Button - Mobile Only */}
         <FloatingWhatsAppButton />
+
+        {/* Cookie consent banner (client) */}
+        <CookieConsent />
       </body>
     </html>
   );

@@ -73,3 +73,6 @@ export const SITE = {
   url: "https://www.ablfisioterapia.com.br", // Substituir pela URL real
   domain: "ablfisioterapia.com.br", // Substituir pelo domínio real
 } as const;
+
+// Google Analytics Measurement ID
+export const GA_MEASUREMENT_ID = "G-WC3R17BTLD";
